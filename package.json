@@ -7,10 +7,10 @@
     "require": "./lib/index.cjs",
     "import": "./lib/esm/index.js"
   },
-  "types": "dist/types/index.d.ts",
+  "types": "lib/index.d.ts",
   "scripts": {
     "do-install": "TOKEN=$(cat .token) npm install",
-    "update-dependencies": "npm update @decaf-ts/*",
+    "update-dependencies": "PREFIX=\"decaf-ts\"; npm ls | grep \"$PREFIX\" | awk -F/ '{print $NF}' | sed 's/@.*//' | xargs -I package npm update @\"$PREFIX\"/package",
     "update-scripts": "npx update-scripts",
     "on-first-run": "npx update-scripts --boot",
     "set-git-auth": "git config url.\"https://api:$(cat .token)@github.com/\".insteadOf \"https://github.com/\" && git config url.\"https://ssh:$(cat .token)@github.com/\".insteadOf \"ssh://git@github.com/\" && git config url.\"https://git:$(cat .token)@github.com/\".insteadOf \"git@github.com:\"",
@@ -46,6 +46,7 @@
     "lib",
     "dist"
   ],
+  "license": "LGPL-3.0-or-later",
   "keywords": [
     "plantuml",
     "mermaid",
@@ -69,9 +70,9 @@
   ],
   "author": "decaf",
   "bugs": {
-    "url": "https://github.com/decaf-ts/ts-workspace/issues"
+    "url": "https://github.com/decaf-ts/styles/issues"
   },
-  "homepage": "https://github.com/decaf-ts/ts-workspace#readme",
+  "homepage": "https://github.com/decaf-ts/styles#readme",
   "devDependencies": {
     "@decaf-ts/utils": "latest",
     "@eslint/js": "^9.25.1",
