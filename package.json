@@ -46,7 +46,7 @@
     "lib",
     "dist"
   ],
-  "license": "LGPL-3.0-or-later",
+  "license": "MIT",
   "keywords": [
     "plantuml",
     "mermaid",
@@ -68,7 +68,7 @@
     "typescript",
     "ts"
   ],
-  "author": "decaf",
+  "author": "Tiago Venceslau",
   "bugs": {
     "url": "https://github.com/decaf-ts/styles/issues"
   },
