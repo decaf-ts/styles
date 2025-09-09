@@ -1,13 +1,31 @@
 {
   "name": "@decaf-ts/styles",
-  "version": "0.0.1",
+  "version": "0.0.0",
   "description": "template for ts projects",
+  "main": "dist/main.min.css",
+  "style": "dist/main.min.css",
   "type": "module",
   "exports": {
-    "require": "./lib/index.cjs",
-    "import": "./lib/esm/index.js"
+    ".": {
+      "default": "./dist/main.css",
+      "production": "./dist/main.min.css"
+    },
+    "./main": "./dist/main.css",
+    "./main.min": "./dist/main.min.css"
   },
-  "types": "lib/index.d.ts",
+  "license": "MIT",
+  "files": [
+    "src",
+    "dist"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/decaf-ts/styles.git"
+  },
+  "engines": {
+    "node": ">=20.0.0",
+    "npm": ">=10.0.0"
+  },
   "scripts": {
     "do-install": "TOKEN=$(cat .token) npm install",
     "update-dependencies": "PREFIX=\"decaf-ts\"; npm ls | grep \"$PREFIX\" | awk -F/ '{print $NF}' | sed 's/@.*//' | xargs -I package npm update @\"$PREFIX\"/package",
@@ -16,11 +34,10 @@
     "set-git-auth": "git config url.\"https://api:$(cat .token)@github.com/\".insteadOf \"https://github.com/\" && git config url.\"https://ssh:$(cat .token)@github.com/\".insteadOf \"ssh://git@github.com/\" && git config url.\"https://git:$(cat .token)@github.com/\".insteadOf \"git@github.com:\"",
     "flash-forward": "npx npm-check-updates -u && npm run do-install",
     "reset": "rm -rf * && git checkout . && git pull && npm run do-install",
-    "build": "npx build-scripts --dev",
-    "build:prod": "npx build-scripts --prod",
+    "build": "node ./bin/build.js",
+    "watch": "node bin/watch.js",
+    "build:prod": "node ./bin/build.js --prod",
     "test": "jest --runInBand --coverage --detectOpenHandles",
-    "test:unit": "jest --testPathPattern=\"/tests/unit\" --passWithNoTests --detectOpenHandles",
-    "test:integration": "jest --testPathPattern=\"/tests/(integration)\" --passWithNoTests --detectOpenHandles",
     "test:all": "jest --testPathPattern=\"/tests\" --passWithNoTests --detectOpenHandles",
     "test:circular": "dpdm -T --no-warning --no-tree ./src/index.ts",
     "coverage": "rimraf ./workdocs/reports/data/*.json && npm run test:all -- --coverage --config=./workdocs/reports/jest.coverage.config.ts",
@@ -32,21 +49,11 @@
     "drawings": "for FILE in workdocs/drawings/*.drawio; do echo \"converting $FILE to image...\" && docker run --rm -v $(pwd):/data rlespinasse/drawio-export --format png $FILE; done && cp -rf workdocs/drawings/export/* workdocs/resources/",
     "uml": "cd workdocs/uml && for FILE in ./*.puml; do docker run --rm -v $(pwd):/work -w /work miy4/plantuml -DPLANTUML_LIMIT_SIZE=8192 -tpng $FILE; done && cd ../.. && cp -fr workdocs/uml/*.png workdocs/resources/",
     "docs": "npx rimraf ./docs && mkdir docs && npx build-scripts --docs",
-    "publish-docs": "docker run -it --rm --user $(id -u):$(id -g) -v \"$(pwd)/workdocs/confluence:/content\" -e ATLASSIAN_API_TOKEN=$(cat .confluence-token) ghcr.io/markdown-confluence/publish:latest"
+    "publish-docs": "docker run -it --rm --user $(id -u):$(id -g) -v \"$(pwd)/workdocs/confluence:/content\" -e ATLASSIAN_API_TOKEN=$(cat .confluence-token) ghcr.io/markdown-confluence/publish:latest",
+    "link": "npm run unlink && npm run build:prod && cd lib && npm link && npm ls -g --depth=0 --link=true && cd ..",
+    "unlink": "npm rm --global @decaf-ts/styles && npm ls -g --depth=0 --link=true",
+    "pack": "rimraf decaf-ts-styles && mkdir decaf-ts-styles && npm pack && tar -tzf *.tgz -C decaf-ts-styles/*"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/decaf-ts/ts-workspace.git"
-  },
-  "engines": {
-    "node": ">=20.0.0",
-    "npm": ">=10.0.0"
-  },
-  "files": [
-    "lib",
-    "dist"
-  ],
-  "license": "MIT",
   "keywords": [
     "plantuml",
     "mermaid",
@@ -66,7 +73,11 @@
     "cd",
     "template",
     "typescript",
-    "ts"
+    "ts",
+    "scss",
+    "sass",
+    "css",
+    "styles"
   ],
   "author": "Tiago Venceslau",
   "bugs": {
@@ -82,7 +93,9 @@
     "@rollup/plugin-typescript": "^12.1.2",
     "@stylistic/eslint-plugin": "^4.2.0",
     "@types/jest": "^29.5.14",
+    "autoprefixer": "^10.4.21",
     "clean-publish": "^5.1.0",
+    "cssnano": "^7.1.1",
     "dpdm": "^3.14.0",
     "eslint": "^9.25.1",
     "eslint-config-prettier": "^10.1.2",
@@ -97,13 +110,17 @@
     "minimist": "^1.2.8",
     "nodemon": "^3.1.9",
     "npm-check-updates": "^18.0.0",
+    "postcss": "^8.5.6",
+    "postcss-cli": "^11.0.1",
     "prettier": "3.5.3",
     "rimraf": "^6.0.1",
     "rollup": "^4.40.0",
+    "sass": "^1.92.1",
     "ts-jest": "^29.3.2",
     "ts-loader": "^9.5.2",
     "ts-node": "^10.9.2",
     "typescript": "^5.8.3",
-    "typescript-eslint": "^8.31.0"
+    "typescript-eslint": "^8.31.0",
+    "chokidar": "^4.0.3"
   }
 }
