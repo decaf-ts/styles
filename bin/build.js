@@ -1,4 +1,4 @@
-import { execSync } from 'child_process';
+import { execFileSync } from 'child_process';
 import { readdirSync, statSync, cpSync, mkdirSync } from 'fs';
 import path from 'path';
 const packageJson = path.resolve('package.json');
@@ -7,7 +7,8 @@ const distDir = path.resolve('dist');
 const libDir = path.resolve('lib');
 const sourceDir = path.resolve('src');
 
-execSync(`npx rimraf ${distDir} && npx rimraf ${libDir}`, { stdio: 'inherit' });
+execFileSync('npx', ['rimraf', distDir], { stdio: 'inherit' });
+execFileSync('npx', ['rimraf', libDir], { stdio: 'inherit' });
 mkdirSync(`${distDir}`, { recursive: true });
 mkdirSync(`${libDir}/dist`, { recursive: true });
 
@@ -30,11 +31,32 @@ function getAllScssFiles(dir) {
 const files = getAllScssFiles(sourceDir);
 
 function buildFile(file, outFile) {
-    const buildCommand = production ? 
-        `npx sass --no-source-map ${file} ${outFile} && npx postcss ${outFile} --use autoprefixer --use cssnano --no-map -o ${outFile.replace('.css', '.min.css')}`
-        : `npx sass ${file} ${outFile}`;
     console.log(`Building: ${file} -> ${outFile}`);
-    execSync(buildCommand, { stdio: 'inherit' });
+    if (production) {
+        // Run sass with arguments
+        execFileSync('npx', [
+            'sass',
+            '--no-source-map',
+            file,
+            outFile
+        ], { stdio: 'inherit' });
+        // Then postcss to minify
+        execFileSync('npx', [
+            'postcss',
+            outFile,
+            '--use', 'autoprefixer',
+            '--use', 'cssnano',
+            '--no-map',
+            '-o',
+            outFile.replace('.css', '.min.css')
+        ], { stdio: 'inherit' });
+    } else {
+        execFileSync('npx', [
+            'sass',
+            file,
+            outFile
+        ], { stdio: 'inherit' });
+    }
 }
 
 files.forEach(file => {
