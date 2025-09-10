@@ -1,23 +1,18 @@
 // Made based on https://cdnjs.cloudflare.com/ajax/libs/uikit/3.22.1/css/uikit.css
 
-@use 'core.scss';
-@use 'components/base.scss';
-@use 'components/grid.scss';
-@use 'components/flex.scss';
-@use 'components/spacement.scss';
-@use 'components/visibility.scss';
-@use 'components/animations.scss';
+@forward 'core.scss';
+@forward 'components/grid.scss';
+@forward 'components/flex.scss';
+@forward 'components/spacement.scss';
+@forward 'components/visibility.scss';
+@forward 'components/animations.scss';
 
 
 // ionic fixes 
-body {
-  font-family: var(--dcf-font-family);
-  font-style: normal;
+ion-app {
      // fix for floating labels
     .input-label-placement-floating {
-        label {
-        line-height: 1.2rem !important;
-        }
+        label { line-height: 1.2rem !important; }
     }
     ion-select {
         &.select-fill-outline { --border-radius: var(--dcf-border-radius);}
@@ -31,15 +26,15 @@ body {
     --border-radius: var(--dcf-border-radius) !important;
 
         &::part(label) {
-        font-weight: 500;
-        color: var(--dcf-color-gray-7) !important;
+            font-weight: 500;
+            color: var(--dcf-color-gray-7) !important;
         }
 
     }
 
      ion-select {
         &.select-fill-outline {
-        --border-radius: var(--dcf-border-radius);
+            --border-radius: var(--dcf-border-radius);
         }
     }
     ion-select.select-label-placement-floating::part(label) {
@@ -79,7 +74,6 @@ body {
             border: 1px solid var(--dcf-color-gray-2);
         }
     }
-
 }
 
 .dcf-fieldset {

@@ -1,3 +1,4 @@
+@forward 'components/base.scss';
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,400..900;1,14..32,400..900&display=swap');
 
 :root {
@@ -101,7 +102,9 @@
 
 @media (prefers-color-scheme: dark) {
     :root {
-        --dcf-input-fill-background: #121212;
+        // --dcf-input-fill-background: #121212;
+        --dcf-input-fill-background: var(--dcf-color-step-100);
+
     }
     // :root {
     //     /* DCF Variables fallback for dark theme */
@@ -294,7 +297,7 @@
   }
 }
 
-html, body, * {
-  font-family: var(--dcf-font-family);
-  font-style: normal;
+
+html {
+    --dcf-dynamic-font: var(--dcf-default-dynamic-font);
 }
