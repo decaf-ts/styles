@@ -1,17 +1,19 @@
 {
   "name": "@decaf-ts/styles",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "template for ts projects",
-  "main": "dist/main.min.css",
-  "style": "dist/main.min.css",
+  "main": "./dist/main.min.css",
+  "style": "./dist/main.min.css",
+  "sass": "./src/main.scss",
   "type": "module",
   "exports": {
-    ".": {
-      "default": "./dist/main.css",
-      "production": "./dist/main.min.css"
+    "./dist/*": {
+      "style": "./dist/*",
+      "sass": "./src/*"
     },
-    "./main": "./dist/main.css",
-    "./main.min": "./dist/main.min.css"
+    "./package.json": {
+      "default": "./package.json"
+    }
   },
   "license": "MIT",
   "files": [
@@ -94,6 +96,7 @@
     "@stylistic/eslint-plugin": "^4.2.0",
     "@types/jest": "^29.5.14",
     "autoprefixer": "^10.4.21",
+    "chokidar": "^4.0.3",
     "clean-publish": "^5.1.0",
     "cssnano": "^7.1.1",
     "dpdm": "^3.14.0",
@@ -120,7 +123,6 @@
     "ts-loader": "^9.5.2",
     "ts-node": "^10.9.2",
     "typescript": "^5.8.3",
-    "typescript-eslint": "^8.31.0",
-    "chokidar": "^4.0.3"
+    "typescript-eslint": "^8.31.0"
   }
 }

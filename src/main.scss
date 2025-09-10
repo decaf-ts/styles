@@ -1,0 +1,160 @@
+// Made based on https://cdnjs.cloudflare.com/ajax/libs/uikit/3.22.1/css/uikit.css
+
+@use 'core.scss';
+@use 'components/base.scss';
+@use 'components/grid.scss';
+@use 'components/flex.scss';
+@use 'components/spacement.scss';
+@use 'components/visibility.scss';
+@use 'components/animations.scss';
+
+
+// ionic fixes 
+body {
+  font-family: var(--dcf-font-family);
+  font-style: normal;
+     // fix for floating labels
+    .input-label-placement-floating {
+        label {
+        line-height: 1.2rem !important;
+        }
+    }
+    ion-select {
+        &.select-fill-outline { --border-radius: var(--dcf-border-radius);}
+    }
+    ion-select.select-label-placement-floating::part(label) { line-height: 1.2rem !important; }
+
+    ion-select,
+    ion-textarea,
+    ion-input {
+    --border-color: var(--dcf-color-gray-3) !important;
+    --border-radius: var(--dcf-border-radius) !important;
+
+        &::part(label) {
+        font-weight: 500;
+        color: var(--dcf-color-gray-7) !important;
+        }
+
+    }
+
+     ion-select {
+        &.select-fill-outline {
+        --border-radius: var(--dcf-border-radius);
+        }
+    }
+    ion-select.select-label-placement-floating::part(label) {
+        line-height: 1.2rem !important;
+    }
+
+   ion-card {
+        ngx-decaf-empty-state ion-card {
+            box-shadow: none;
+        }
+    }
+
+    // ***** Figma
+    ion-popover::part(content) {
+        border-radius: 8px;
+        border: 1px solid var(--dcf-color-gray-3);
+        box-shadow: 0px 12px 16px -4px rgba(10, 13, 18, 0.08), 0px 4px 6px -2px rgba(10, 13, 18, 0.03), 0px 2px 2px -1px rgba(10, 13, 18, 0.04);
+
+    }
+    ion-button {
+        &:not(.button-round) { --border-radius: 8px; }
+    }
+
+    ion-searchbar.dcf-searchbar {
+        --background: transparent;
+        .searchbar-input {
+            border: 1px solid var(--dcf-color-gray-3) !important;
+            min-height: 40px;
+            box-shadow: 0px 1px 2px rgba(10, 13, 18, 0.05);
+            border-radius: 8px;
+        }
+    }
+
+    ion-card {
+        &.dcf-card-default {
+            box-shadow: none;
+            border: 1px solid var(--dcf-color-gray-2);
+        }
+    }
+
+}
+
+.dcf-fieldset {
+  .dcf-fieldset{
+    margin-top: 2.25rem !important;
+  }
+}
+
+
+a {
+  color: var(--dcf-color-dark);
+  font-weight: 500;
+}
+
+// remove auto fill background
+
+input,
+select,
+textarea {
+  &:-webkit-autofill,
+  &:-webkit-autofill:hover,
+  &:-webkit-autofill:focus,
+  &:-webkit-autofill:active,
+  &:-webkit-autofill {
+
+    border :none !important;
+    -webkit-text-fill-color: var(--dcf-color-primary) !important;
+    -webkit-box-shadow: 0 0 0px 1000px  var(--dcf-input-fill-background) inset;
+    box-shadow: 0 0 0px 1000px  var(--dcf-input-fill-background) inset;
+    -webkit-transition: -webkit-box-shadow 50s ease-in-out;
+    transition: box-shadow 50s ease-in-out;
+  }
+}
+
+// fix - ionic error text element
+* {
+    &:not(.ng-untouched) {
+    .input-bottom {
+        display: none;
+      }
+    }
+
+    &.ng-touched {
+      .input-bottom {
+        display: block;
+        margin-bottom: -1rem !important;
+        padding-left: 0px !important;
+      }
+
+      .error-text {
+        animation-duration: 0.1s;
+        animation-timing-function: ease-in;
+        animation-fill-mode: both;
+        animation-name: fadeBottomSmallAnimation;
+        font-weight: 600;
+      }
+    }
+}
+.dcf-hidden {
+  display: none !important;
+}
+
+.dcf-invisible {
+  visibility: hidden;
+}
+.dcf-box-shadow-remove {
+  box-shadow: none;
+}
+.dcf-disabled {
+  opacity: 0.7;
+  pointer-events: none;
+  touch-action: none;
+  * {
+    pointer-events: none;
+    touch-action: none;
+  }
+}
+
