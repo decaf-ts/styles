@@ -4,8 +4,16 @@ export const watchConfig = {
   options: {
     persistent: true,
     ignoreInitial: false,
-    ignored: /(^|[/\\])\../ 
+    ignored: [
+      '**/node_modules/**',
+      '**/dist/**',
+      '**/lib/**',
+      '**/workdocs/**',
+      '**/tests/**',
+      '**/bin/**',
+      '**/.git/**',
+      '**/.vscode/**',
+      '**/.*'
+    ]
   }
-};
-
-export const buildCommand = 'node bin/build.js'
+};export const buildCommand = 'node bin/build.js'

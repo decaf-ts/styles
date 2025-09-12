@@ -12,7 +12,7 @@ watcher
     runBuild();
   })
   .on('change', path => {
-    console.log(`File changed: ${path}`);
+    console.log(`File changed: ${path}`); 
     runBuild();
   })
   .on('unlink', path => {
@@ -24,7 +24,7 @@ function runBuild() {
   try {
     setTimeout(() => {
         execSync(buildCommand, { stdio: 'inherit' });
-    }, 400);
+    }, 1500);
     
   } catch (err) {
     console.error('Build failed:', err.message);
