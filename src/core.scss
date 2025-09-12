@@ -134,8 +134,8 @@
     //     --dcf-color-step-900: #e6e6e6;
     //     --dcf-color-step-950: #f2f2f2;
 
-    //     --dcf-item-background: #1e1e1e;
-    //     --dcf-card-background: #1e1e1e;
+    //     --dcf-item-background: #2f3349;
+    //     --dcf-card-background: #2f3349;
     //     --dcf-toolbar-background: #1f1f1f;
     //     --dcf-tab-bar-background: #1f1f1f;
     // }
@@ -215,9 +215,8 @@
    */
 
   .ios body {
-    --dcf-input-fill-background: #000000;
-    --dcf-background-color: #000000;
-    --dcf-background-color-rgb: 0,0,0;
+    --dcf-background-color: #25293c;
+    --dcf-background-color-rgb: 37,41,60;
     
     --dcf-text-color: #ffffff;
     --dcf-text-color-rgb: 255,255,255;
@@ -242,9 +241,12 @@
     --dcf-color-step-900: #e6e6e6;
     --dcf-color-step-950: #f2f2f2;
 
-    --dcf-item-background: #000000;
+    --dcf-item-background: #2f3349;
 
-    --dcf-card-background: #1c1c1d;
+    --dcf-card-background: #2f3349;
+
+    --dcf-input-fill-background: var(--dcf-card-background);
+
   }
 
   .ios ion-modal {
@@ -259,15 +261,16 @@
    */
 
   .md body {
-    --dcf-background-color: #121212;
-    --dcf-background-color-rgb: 18,18,18;
+ 
+    --dcf-background-color: #25293c;
+    --dcf-background-color-rgb: 37,41,60;
 
     --dcf-text-color: #ffffff;
     --dcf-text-color-rgb: 255,255,255;
 
     --dcf-border-color: #222222;
 
-    --dcf-color-step-50: #1e1e1e;
+    --dcf-color-step-50: #2f3349;
     --dcf-color-step-100: #2a2a2a;
     --dcf-color-step-150: #363636;
     --dcf-color-step-200: #414141;
@@ -287,13 +290,14 @@
     --dcf-color-step-900: #e7e7e7;
     --dcf-color-step-950: #f3f3f3;
 
-    --dcf-item-background: #1e1e1e;
+    --dcf-item-background: #2f3349;
 
-    --dcf-toolbar-background: #1f1f1f;
+    --dcf-toolbar-background: #2f3349;
 
-    --dcf-tab-bar-background: #1f1f1f;
+    --dcf-tab-bar-background: #31354d;
 
-    --dcf-card-background: #1e1e1e;
+    --dcf-card-background: #2f3349;
+    --dcf-input-fill-background: var(--dcf-card-background);
   }
 }
 

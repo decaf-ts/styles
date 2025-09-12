@@ -21,15 +21,33 @@ ion-app {
 
     ion-select,
     ion-textarea,
+    ion-radio-group,
     ion-input {
-    --border-color: var(--dcf-color-gray-3) !important;
-    --border-radius: var(--dcf-border-radius) !important;
+        --border-radius: var(--dcf-border-radius) !important;
+        &::part(label) { font-weight: 500; }
 
-        &::part(label) {
-            font-weight: 500;
-            color: var(--dcf-color-gray-7) !important;
+        @media (prefers-color-scheme: light) { 
+            --border-color: var(--dcf-color-gray-3) !important; 
+             ion-label,
+             label,
+             &::part(label) {
+                color: var(--dcf-color-gray-7) !important;
+            }
         }
 
+        @media (prefers-color-scheme: dark) { 
+            --placeholder-color: var(--dcf-color-gray-1) !important;
+            ion-label,
+            label,
+             &::part(label) {
+              
+                color: var(--dcf-color-gray-3) !important;
+            }
+            // figma
+            &:not(:hover){
+                --border-color: var(--dcf-color-step-500) !important; 
+             }
+        }
     }
 
      ion-select {
@@ -71,7 +89,8 @@ ion-app {
     ion-card {
         &.dcf-card-default {
             box-shadow: none;
-            border: 1px solid var(--dcf-color-gray-2);
+            @media (prefers-color-scheme: light) { border: 1px solid var(--dcf-color-gray-2); }
+            // @media (prefers-color-scheme: dark) { border: 1px solid var(--dcf-color-gray-7); }
         }
     }
 }
@@ -84,7 +103,7 @@ ion-app {
 
 
 a {
-  color: var(--dcf-color-dark);
+  @media (prefers-color-scheme: light) { color: var(--dcf-color-dark); }
   font-weight: 500;
 }
 
