@@ -1,0 +1,69 @@
+[hidden],
+.dcf-hidden,
+.dcf-hidden-empty:empty {
+  display: none !important;
+}
+
+@media (min-width: 576px) {
+  .dcf-hidden\@s {
+    display: none !important;
+  }
+}
+
+@media (min-width: 768px) {
+  .dcf-hidden\@m {
+    display: none !important;
+  }
+}
+
+@media (min-width: 1200px) {
+  .dcf-hidden\@l {
+    display: none !important;
+  }
+}
+
+@media (min-width: 1200px) {
+  .dcf-hidden\@xl {
+    display: none !important;
+  }
+}
+
+@media (max-width: 639px) {
+  .dcf-visible\@s {
+    display: none !important;
+  }
+}
+
+@media (max-width: 959px) {
+  .dcf-visible\@m {
+    display: none !important;
+  }
+}
+
+@media (max-width: 1199px) {
+  .dcf-visible\@l {
+    display: none !important;
+  }
+}
+
+@media (max-width: 1599px) {
+  .dcf-visible\@xl {
+    display: none !important;
+  }
+}
+
+.dcf-invisible {
+  visibility: hidden !important;
+}
+
+@media (hover: none) {
+  .dcf-hidden-touch {
+    display: none !important;
+  }
+}
+
+@media (hover) {
+  .dcf-hidden-notouch {
+    display: none !important;
+  }
+}
