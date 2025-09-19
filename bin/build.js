@@ -38,30 +38,24 @@ function buildFile(file, outFile) {
             npx sass --no-source-map "${file}" "${outFile}" &&
             npx postcss "${outFile}" --use autoprefixer --use cssnano --no-map -o "${outFile.replace('.css', '.min.css')}"
         `], { stdio: 'inherit' });
-        // Run sass with arguments
-    //     execFileSync('npx', [
-    //         'sass',
-    //         '--no-source-map',
-    //         file,
-    //         outFile
-    //     ], { stdio: 'inherit' });
-    //     // Then postcss to minify
-    //     execFileSync('npx', [
-    //         'postcss',
-    //         outFile,
-    //         '--use', 'autoprefixer',
-    //         '--use', 'cssnano',
-    //         '--no-map',
-    //         '-o',
-    //         outFile.replace('.css', '.min.css')
-    //     ], { stdio: 'inherit' });
+            // Run sass with arguments
+        //     execFileSync('npx', [
+        //         'sass',
+        //         '--no-source-map',
+        //         file,
+        //         outFile
+        //     ], { stdio: 'inherit' });
+        //     // Then postcss to minify
+        //     execFileSync('npx', [
+        //         'postcss',
+        //         outFile,
+        //         '--use', 'autoprefixer',
+        //         '--use', 'cssnano',
+        //         '--no-map',
+        //         '-o',
+        //         outFile.replace('.css', '.min.css')
+        //     ], { stdio: 'inherit' });
     } else {
-        execFileSync('npx', [
-            'sass',
-            file,
-            outFile
-        ], { stdio: 'inherit' });
-    }
         execFileSync('npx', [
             'sass',
             file,
