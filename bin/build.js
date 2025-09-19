@@ -30,26 +30,29 @@ function getAllScssFiles(dir) {
 
 const files = getAllScssFiles(sourceDir);
 
-function buildFile(file, outFile) {
+function buildFile(file, outFile, compress = false) {
     console.log(`Building: ${file} -> ${outFile}`);
     if (production) {
-        // Run sass with arguments
-        execFileSync('npx', [
-            'sass',
-            '--no-source-map',
-            file,
-            outFile
-        ], { stdio: 'inherit' });
-        // Then postcss to minify
-        execFileSync('npx', [
-            'postcss',
-            outFile,
-            '--use', 'autoprefixer',
-            '--use', 'cssnano',
-            '--no-map',
-            '-o',
-            outFile.replace('.css', '.min.css')
-        ], { stdio: 'inherit' });
+            // Run sass with arguments
+            if(!compress) {
+                execFileSync('npx', [
+                    'sass',
+                    '--no-source-map',
+                    file,
+                    outFile
+                ], { stdio: 'inherit' });
+            } else {
+            // Then postcss to minify
+            execFileSync('npx', [
+                'postcss',
+                    outFile,
+                    '--use', 'autoprefixer',
+                    '--use', 'cssnano',
+                    '--no-map',
+                    '-o',
+                    outFile.replace('.css', '.min.css')
+                ], { stdio: 'inherit' });
+            } 
     } else {
         execFileSync('npx', [
             'sass',
@@ -63,6 +66,8 @@ files.forEach(file => {
   const outFile = path.join(distDir, path.relative(sourceDir, file).replace('.scss', '.css'));
   mkdirSync(path.dirname(outFile), { recursive: true });
   buildFile(file, outFile);
+  if(production)
+    buildFile(file, outFile, true);
 });
 
 
