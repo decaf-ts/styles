@@ -49,14 +49,19 @@ ion-app {
              }
         }
     }
-
-     ion-select {
+    
+    ion-select {
         &.select-fill-outline {
             --border-radius: var(--dcf-border-radius);
         }
-    }
-    ion-select.select-label-placement-floating::part(label) {
-        line-height: 1.2rem !important;
+        &::part(error-text) {
+            margin-left: -1rem !important;
+        }
+
+        &.select-label-placement-floating::part(label) {
+            line-height: 1.2rem !important;
+        }
+
     }
 
    ion-card {
@@ -129,6 +134,11 @@ textarea {
 
 // fix - ionic error text element
 * {
+    .input-bottom {
+        height: 0px !important;
+        margin: 0px !important;
+        padding: 0px !important;
+    }
     &:not(.ng-untouched) {
     .input-bottom {
         display: none;
@@ -138,10 +148,11 @@ textarea {
     &.ng-touched {
       .input-bottom {
         display: block;
-        margin-bottom: -1rem !important;
+        // margin-bottom: -1rem !important;
         padding-left: 0px !important;
       }
-
+      ::part(error-text),
+      &::part(error-text),
       .error-text {
         animation-duration: 0.1s;
         animation-timing-function: ease-in;
@@ -151,6 +162,8 @@ textarea {
       }
     }
 }
+
+
 .dcf-hidden {
   display: none !important;
 }
@@ -171,3 +184,13 @@ textarea {
   }
 }
 
+@keyframes fadeBottomSmallAnimation {
+  0% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
