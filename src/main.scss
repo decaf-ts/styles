@@ -57,7 +57,7 @@ ion-app {
         &::part(error-text) {
             margin-left: -1rem !important;
             height: 0px;
-            padding: 0px;
+            padding: 0px;  
         }
 
         &.select-label-placement-floating::part(label) {
