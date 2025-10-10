@@ -102,10 +102,71 @@ ion-app {
     }
 }
 
-.dcf-fieldset {
+
+// fixes for model rederer component in grid
+.dcf-grid.dcf-model-renderer-component {
+  ngx-decaf-crud-field {
+      > .dcf-input-item {
+          width: 100% !important;
+      }
+    }
+    ngx-decaf-component-renderer {
+      width: 100% !important;
+      margin-bottom: 2.75rem;
+      margin-top: -1rem;
+      margin-left: -2px;
+
+      .dcf-fieldset {
+        &.read, &.delete {
+          margin-top: 2.25rem !important;
+        }
+      }
+    }
+}
+
+// stepped form customizations
+ngx-decaf-stepped-form .dcf-single-step {
+  ngx-decaf-fieldset .dcf-fieldset {
+    margin-top: .5rem !important;
+    margin-bottom: 2rem;
+  }
+}
+
+// Fieldset component customizations
+ngx-decaf-fieldset {
+  ion-accordion {
+    ion-item[slot="header"] {
+      .ion-accordion-toggle-icon {
+        display: none;
+      }
+
+       &.disable-collapse {
+          cursor: text;
+        * {
+         
+          pointer-events: none !important;
+          touch-action: none !important;
+          cursor: text;
+        }
+      }
+    }
+  }
+  // fieldset inside fieldset
   .dcf-fieldset{
     margin-top: 2.25rem !important;
   }
+}
+
+
+// crud field component global customizations
+ngx-decaf-crud-field  {
+    > .dcf-input-item {
+        width: 100% !important;
+    }
+    // change border color on invalid
+    .ng-invalid.ng-touched  {
+        --border-color: var(--dcf-color-danger) !important;
+    }
 }
 
 
