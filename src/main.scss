@@ -136,12 +136,11 @@ ngx-decaf-stepped-form .dcf-single-step {
 ngx-decaf-fieldset {
   ion-accordion {
     ion-item[slot="header"] {
-      .ion-accordion-toggle-icon {
-        display: none;
-      }
-
        &.disable-collapse {
-          cursor: text;
+        cursor: text;
+        .ion-accordion-toggle-icon {
+            display: none;
+        }
         * {
          
           pointer-events: none !important;
