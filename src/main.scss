@@ -19,6 +19,11 @@ ion-app {
     }
     ion-select.select-label-placement-floating::part(label) { line-height: 1.2rem !important; }
 
+    // fix to hide placeholder when select is invalid and focused
+    ion-select.ng-invalid.has-focus::part(placeholder) {
+        display: none !important;
+    }
+
     ion-select,
     ion-textarea,
     ion-radio-group,
