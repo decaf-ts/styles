@@ -109,33 +109,33 @@ ion-app {
 
 
 // fixes for model rederer component in grid
-.dcf-grid.dcf-model-renderer-component {
-  ngx-decaf-crud-field {
-      > .dcf-input-item {
-          width: 100% !important;
-      }
-    }
-    ngx-decaf-component-renderer {
-      width: 100% !important;
-      margin-bottom: 2.75rem;
-      margin-top: -1rem;
-      margin-left: -2px;
+// .dcf-grid.dcf-model-renderer-component {
+//   ngx-decaf-crud-field {
+//       > .dcf-input-item {
+//           width: 100% !important;
+//       }
+//     }
+//     ngx-decaf-component-renderer {
+//       width: 100% !important;
+//       margin-bottom: 2.75rem;
+//       margin-top: -1rem;
+//       margin-left: -2px;
 
-      .dcf-fieldset {
-        &.read, &.delete {
-          margin-top: 2.25rem !important;
-        }
-      }
-    }
-}
+//       .dcf-fieldset {
+//         &.read, &.delete {
+//           margin-top: 2.25rem !important;
+//         }
+//       }
+//     }
+// }
 
 // stepped form customizations
-ngx-decaf-stepped-form .dcf-single-step {
-  ngx-decaf-fieldset .dcf-fieldset {
-    margin-top: .5rem !important;
-    margin-bottom: 2rem;
-  }
-}
+// ngx-decaf-stepped-form .dcf-single-step {
+//   ngx-decaf-fieldset .dcf-fieldset {
+//     margin-top: .5rem !important;
+//     margin-bottom: 2rem;
+//   }
+// }
 
 // Fieldset component customizations
 ngx-decaf-fieldset {
@@ -156,7 +156,7 @@ ngx-decaf-fieldset {
     }
   }
   // fieldset inside fieldset
-  .dcf-fieldset{
+  &.dcf-fieldset .dcf-fieldset{
     margin-top: 2.25rem !important;
   }
 }
@@ -218,9 +218,9 @@ textarea {
         // margin-bottom: -1rem !important;
         padding-left: 0px !important;
       }
+      .error-text,
       ::part(error-text),
-      &::part(error-text),
-      .error-text {
+      &::part(error-text) {
         animation-duration: 0.1s;
         animation-timing-function: ease-in;
         animation-fill-mode: both;
