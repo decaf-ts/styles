@@ -16,7 +16,7 @@
   }
 }
 
-@media (min-width: 1200px) {
+@media (min-width: 992px) {
   .dcf-hidden\@l {
     display: none !important;
   }
@@ -28,25 +28,25 @@
   }
 }
 
-@media (max-width: 639px) {
+@media (max-width: 575px) {
   .dcf-visible\@s {
     display: none !important;
   }
 }
 
-@media (max-width: 959px) {
+@media (max-width: 767px) {
   .dcf-visible\@m {
     display: none !important;
   }
 }
 
-@media (max-width: 1199px) {
+@media (max-width: 991px) {
   .dcf-visible\@l {
     display: none !important;
   }
 }
 
-@media (max-width: 1599px) {
+@media (max-width: 1199px) {
   .dcf-visible\@xl {
     display: none !important;
   }
