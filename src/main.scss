@@ -200,33 +200,39 @@ textarea {
 }
 
 // fix - ionic error text element
+
 * {
+    .select-bottom,
+    .textarea-bottom,
     .input-bottom {
         height: 0px !important;
         margin: 0px !important;
         padding: 0px !important;
     }
+
     &:not(.ng-untouched) {
+    + .dcf-error,
     .input-bottom {
         display: none;
       }
     }
 
     &.ng-touched {
+      + .dcf-error,
       .input-bottom {
         display: block;
-        // margin-bottom: -1rem !important;
-        padding-left: 0px !important;
       }
-      .error-text,
-      ::part(error-text),
-      &::part(error-text) {
-        animation-duration: 0.1s;
-        animation-timing-function: ease-in;
-        animation-fill-mode: both;
-        animation-name: fadeBottomSmallAnimation;
-        font-weight: 600;
-      }
+    }
+    .dcf-error,
+    .error-text,
+    ::part(error-text),
+    &::part(error-text) {
+      margin-top: .25rem !important;
+      animation-duration: 0.05s;
+      animation-timing-function: ease-in;
+      animation-fill-mode: both;
+      animation-name: fadeBottomSmallAnimation;
+      font-weight: 500;
     }
 }
 
@@ -238,17 +244,29 @@ textarea {
 .dcf-invisible {
   visibility: hidden;
 }
+
 .dcf-box-shadow-remove {
   box-shadow: none;
 }
-.dcf-disabled {
-  opacity: 0.7;
+
+@mixin touch-disabled {
   pointer-events: none;
   touch-action: none;
+  cursor: text;
   * {
     pointer-events: none;
     touch-action: none;
+    cursor: text;
   }
+}
+
+.dcf-disabled {
+  opacity: 0.7;
+  @include touch-disabled;
+}
+
+.dcf-touch-disabled {
+  @include touch-disabled;
 }
 
 @keyframes fadeBottomSmallAnimation {
