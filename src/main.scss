@@ -110,6 +110,17 @@ ion-app {
   ion-card {
     &.dcf-card-default {
       box-shadow: none;
+      ion-card-title {
+        padding: 1rem 1rem 0rem 1rem !important;
+      }
+
+      ion-card-header + ion-card-content {
+        margin-top: 0.5rem;
+      }
+
+      ion-card-content {
+        margin-top: 1rem;
+      }
       @media (prefers-color-scheme: light) {
         border: 1px solid var(--dcf-color-gray-2);
       }
