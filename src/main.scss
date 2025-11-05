@@ -1,112 +1,122 @@
 // Made based on https://cdnjs.cloudflare.com/ajax/libs/uikit/3.22.1/css/uikit.css
 
-@forward 'core.scss';
-@forward 'components/grid.scss';
-@forward 'components/flex.scss';
-@forward 'components/spacement.scss';
-@forward 'components/visibility.scss';
-@forward 'components/animations.scss';
+@forward "core.scss";
+@forward "components/grid.scss";
+@forward "components/flex.scss";
+@forward "components/spacement.scss";
+@forward "components/visibility.scss";
+@forward "components/animations.scss";
 
-
-// ionic fixes 
+// ionic fixes
 ion-app {
-     // fix for floating labels
-    .input-label-placement-floating {
-        label { line-height: 1.2rem !important; }
+  // fix for floating labels
+  .input-label-placement-floating {
+    label {
+      line-height: 1.2rem !important;
     }
-    ion-select {
-        &.select-fill-outline { --border-radius: var(--dcf-border-radius);}
+  }
+  ion-select {
+    &.select-fill-outline {
+      --border-radius: var(--dcf-border-radius);
     }
-    ion-select.select-label-placement-floating::part(label) { line-height: 1.2rem !important; }
+  }
+  ion-select.select-label-placement-floating::part(label) {
+    line-height: 1.2rem !important;
+  }
 
-    // fix to hide placeholder when select is invalid and focused
-    ion-select.ng-invalid.has-focus::part(placeholder) {
-        display: none !important;
-    }
+  // fix to hide placeholder when select is invalid and focused
+  ion-select.ng-invalid.has-focus::part(placeholder) {
+    display: none !important;
+  }
 
-    ion-select,
-    ion-textarea,
-    ion-radio-group,
-    ion-input {
-        --border-radius: var(--dcf-border-radius) !important;
-        &::part(label) { font-weight: 500; }
-
-        @media (prefers-color-scheme: light) { 
-            --border-color: var(--dcf-color-gray-3) !important; 
-             ion-label,
-             label,
-             &::part(label) {
-                color: var(--dcf-color-gray-7) !important;
-            }
-        }
-
-        @media (prefers-color-scheme: dark) { 
-            --placeholder-color: var(--dcf-color-gray-1) !important;
-            ion-label,
-            label,
-             &::part(label) {
-              
-                color: var(--dcf-color-gray-3) !important;
-            }
-            // figma
-            &:not(:hover){
-                --border-color: var(--dcf-color-step-500) !important; 
-             }
-        }
-    }
-    
-    ion-select {
-        &.select-fill-outline {
-            --border-radius: var(--dcf-border-radius);
-        }
-        &::part(error-text) {
-            margin-left: -1rem !important;
-            height: 0px;
-            padding: 0px;  
-        }
-
-        &.select-label-placement-floating::part(label) {
-            line-height: 1.2rem !important;
-        }
-
+  ion-select,
+  ion-textarea,
+  ion-radio-group,
+  ion-input {
+    --border-radius: var(--dcf-border-radius) !important;
+    &::part(label) {
+      font-weight: 500;
     }
 
-   ion-card {
-        ngx-decaf-empty-state ion-card {
-            box-shadow: none;
-        }
+    @media (prefers-color-scheme: light) {
+      --border-color: var(--dcf-color-gray-3) !important;
+      ion-label,
+      label,
+      &::part(label) {
+        color: var(--dcf-color-gray-7) !important;
+      }
     }
 
-    // ***** Figma
-    ion-popover::part(content) {
-        border-radius: var(--dcf-border-radius);
-        border: 1px solid var(--dcf-color-gray-3);
-        box-shadow: 0px 12px 16px -4px rgba(10, 13, 18, 0.08), 0px 4px 6px -2px rgba(10, 13, 18, 0.03), 0px 2px 2px -1px rgba(10, 13, 18, 0.04);
+    @media (prefers-color-scheme: dark) {
+      --placeholder-color: var(--dcf-color-gray-1) !important;
+      ion-label,
+      label,
+      &::part(label) {
+        color: var(--dcf-color-gray-3) !important;
+      }
+      // figma
+      &:not(:hover) {
+        --border-color: var(--dcf-color-step-500) !important;
+      }
+    }
+  }
 
+  ion-select {
+    &.select-fill-outline {
+      --border-radius: var(--dcf-border-radius);
     }
-    ion-button {
-        &:not(.button-round) { --border-radius: var(--dcf-border-radius); }
-    }
-
-    ion-searchbar.dcf-searchbar {
-        --background: transparent;
-        .searchbar-input {
-            border: 1px solid var(--dcf-color-gray-3) !important;
-            min-height: 40px;
-            box-shadow: 0px 1px 2px rgba(10, 13, 18, 0.05);
-            border-radius: var(--dcf-border-radius);
-        }
+    &::part(error-text) {
+      margin-left: -1rem !important;
+      height: 0px;
+      padding: 0px;
     }
 
-    ion-card {
-        &.dcf-card-default {
-            box-shadow: none;
-            @media (prefers-color-scheme: light) { border: 1px solid var(--dcf-color-gray-2); }
-            // @media (prefers-color-scheme: dark) { border: 1px solid var(--dcf-color-gray-7); }
-        }
+    &.select-label-placement-floating::part(label) {
+      line-height: 1.2rem !important;
     }
+  }
+
+  ion-card {
+    ngx-decaf-empty-state ion-card {
+      box-shadow: none;
+    }
+  }
+
+  // ***** Figma
+  ion-popover::part(content) {
+    border-radius: var(--dcf-border-radius);
+    border: 1px solid var(--dcf-color-gray-3);
+    box-shadow:
+      0px 12px 16px -4px rgba(10, 13, 18, 0.08),
+      0px 4px 6px -2px rgba(10, 13, 18, 0.03),
+      0px 2px 2px -1px rgba(10, 13, 18, 0.04);
+  }
+  ion-button {
+    &:not(.button-round) {
+      --border-radius: var(--dcf-border-radius);
+    }
+  }
+
+  ion-searchbar.dcf-searchbar {
+    --background: transparent;
+    .searchbar-input {
+      border: 1px solid var(--dcf-color-gray-3) !important;
+      min-height: 40px;
+      box-shadow: 0px 1px 2px rgba(10, 13, 18, 0.05);
+      border-radius: var(--dcf-border-radius);
+    }
+  }
+
+  ion-card {
+    &.dcf-card-default {
+      box-shadow: none;
+      @media (prefers-color-scheme: light) {
+        border: 1px solid var(--dcf-color-gray-2);
+      }
+      // @media (prefers-color-scheme: dark) { border: 1px solid var(--dcf-color-gray-7); }
+    }
+  }
 }
-
 
 // fixes for model rederer component in grid
 // .dcf-grid.dcf-model-renderer-component {
@@ -141,13 +151,12 @@ ion-app {
 ngx-decaf-fieldset {
   ion-accordion {
     ion-item[slot="header"] {
-       &.disable-collapse {
+      &.disable-collapse {
         cursor: text;
         .ion-accordion-toggle-icon {
-            display: none;
+          display: none;
         }
         * {
-         
           pointer-events: none !important;
           touch-action: none !important;
           cursor: text;
@@ -156,26 +165,26 @@ ngx-decaf-fieldset {
     }
   }
   // fieldset inside fieldset
-  &.dcf-fieldset .dcf-fieldset{
+  &.dcf-fieldset .dcf-fieldset {
     margin-top: 2.25rem !important;
   }
 }
 
-
 // crud field component global customizations
-ngx-decaf-crud-field  {
-    > .dcf-input-item {
-        width: 100% !important;
-    }
-    // change border color on invalid
-    .ng-invalid.ng-touched  {
-        --border-color: var(--dcf-color-danger) !important;
-    }
+ngx-decaf-crud-field {
+  > .dcf-input-item {
+    width: 100% !important;
+  }
+  // change border color on invalid
+  .ng-invalid.ng-touched {
+    --border-color: var(--dcf-color-danger) !important;
+  }
 }
 
-
 a {
-  @media (prefers-color-scheme: light) { color: var(--dcf-color-dark); }
+  @media (prefers-color-scheme: light) {
+    color: var(--dcf-color-dark);
+  }
   font-weight: 500;
 }
 
@@ -189,11 +198,10 @@ textarea {
   &:-webkit-autofill:focus,
   &:-webkit-autofill:active,
   &:-webkit-autofill {
-
-    border :none !important;
+    border: none !important;
     -webkit-text-fill-color: var(--dcf-color-primary) !important;
-    -webkit-box-shadow: 0 0 0px 1000px  var(--dcf-input-fill-background) inset;
-    box-shadow: 0 0 0px 1000px  var(--dcf-input-fill-background) inset;
+    -webkit-box-shadow: 0 0 0px 1000px var(--dcf-input-fill-background) inset;
+    box-shadow: 0 0 0px 1000px var(--dcf-input-fill-background) inset;
     -webkit-transition: -webkit-box-shadow 50s ease-in-out;
     transition: box-shadow 50s ease-in-out;
   }
@@ -202,40 +210,39 @@ textarea {
 // fix - ionic error text element
 
 * {
-    .select-bottom,
-    .textarea-bottom,
-    .input-bottom {
-        height: 0px !important;
-        margin: 0px !important;
-        padding: 0px !important;
-    }
+  .select-bottom,
+  .textarea-bottom,
+  .input-bottom {
+    height: 0px !important;
+    margin: 0px !important;
+    padding: 0px !important;
+  }
 
-    &:not(.ng-untouched) {
+  &:not(.ng-untouched) {
     + .dcf-error,
     .input-bottom {
-        display: none;
-      }
+      display: none;
     }
+  }
 
-    &.ng-touched {
-      + .dcf-error,
-      .input-bottom {
-        display: block;
-      }
+  &.ng-touched {
+    + .dcf-error,
+    .input-bottom {
+      display: block;
     }
-    .dcf-error,
-    .error-text,
-    ::part(error-text),
-    &::part(error-text) {
-      margin-top: .25rem !important;
-      animation-duration: 0.05s;
-      animation-timing-function: ease-in;
-      animation-fill-mode: both;
-      animation-name: fadeBottomSmallAnimation;
-      font-weight: 500;
-    }
+  }
+  .dcf-error,
+  .error-text,
+  ::part(error-text),
+  &::part(error-text) {
+    margin-top: 0.25rem !important;
+    animation-duration: 0.05s;
+    animation-timing-function: ease-in;
+    animation-fill-mode: both;
+    animation-name: fadeBottomSmallAnimation;
+    font-weight: 500;
+  }
 }
-
 
 .dcf-hidden {
   display: none !important;
@@ -277,5 +284,17 @@ textarea {
   100% {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+// TODO: Fixes on grid
+@media (max-width: 576px) {
+  .dcf-grid-small,
+  .dcf-grid-column-small {
+    margin-left: 0 !important;
+  }
+  .dcf-grid-small > *,
+  .dcf-grid-column-small > * {
+    padding-left: 0 !important;
   }
 }
