@@ -15,18 +15,41 @@ ion-app {
       line-height: 1.2rem !important;
     }
   }
+  // ion-select {
+  //   &.select-fill-outline {
+  //     --border-radius: var(--dcf-border-radius);
+  //   }
+  // }
+  // ion-select.select-label-placement-floating::part(label) {
+  //   line-height: 1.2rem !important;
+  // }
+
+  // fix to hide placeholder when select is invalid and focused
+  // ion-select.ng-invalid.has-focus::part(placeholder) {
+  //   display: none !important;
+  // }
+
   ion-select {
+    &.ng-invalid.has-focus::part(placeholder) {
+      display: none !important;
+    }
+
     &.select-fill-outline {
       --border-radius: var(--dcf-border-radius);
     }
-  }
-  ion-select.select-label-placement-floating::part(label) {
-    line-height: 1.2rem !important;
-  }
-
-  // fix to hide placeholder when select is invalid and focused
-  ion-select.ng-invalid.has-focus::part(placeholder) {
-    display: none !important;
+    &::part(error-text) {
+      margin-left: -1rem !important;
+      height: 0px;
+      padding: 0px;
+    }
+    &.select-label-placement-floating::part(label) {
+      line-height: 1.2rem !important;
+    }
+    &::part(text) {
+      text-transform: capitalize;
+      color: var(--dcf-color-gray-7);
+      font-weight: 500;
+    }
   }
 
   ion-select,
@@ -61,19 +84,11 @@ ion-app {
     }
   }
 
-  ion-select {
-    &.select-fill-outline {
-      --border-radius: var(--dcf-border-radius);
-    }
-    &::part(error-text) {
-      margin-left: -1rem !important;
-      height: 0px;
-      padding: 0px;
-    }
-
-    &.select-label-placement-floating::part(label) {
-      line-height: 1.2rem !important;
-    }
+  .alert-radio-label,
+  .alert-checkbox-label,
+  .select-interface-option,
+  ion-select::part(text) {
+    text-transform: capitalize;
   }
 
   ion-card {
