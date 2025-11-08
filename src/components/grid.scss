@@ -1,4 +1,6 @@
- .dcf-grid {
+@use "variables/decaf.scss" as *;
+
+.dcf-grid {
   display: flex;
 
   flex-wrap: wrap;
@@ -17,41 +19,40 @@
 }
 
 .dcf-grid {
-  margin-left: -30px;
+  margin-left: -$dcf-spacement-medium;
 }
 .dcf-grid > * {
-  padding-left: 30px;
+  padding-left: $dcf-spacement-medium;
 }
 
 .dcf-grid + .dcf-grid,
 .dcf-grid > .dcf-grid-margin,
 * + .dcf-grid-margin {
-  margin-top: 30px;
+  margin-top: $dcf-spacement-medium;
 }
 
-@media (min-width: 1200px) {
-
+@media (min-width: $dcf-width-xl) {
   .dcf-grid {
-    margin-left: -40px;
+    margin-left: -$dcf-spacement-large;
   }
   .dcf-grid > * {
-    padding-left: 40px;
+    padding-left: $dcf-spacement-large;
   }
 
   .dcf-grid + .dcf-grid,
   .dcf-grid > .dcf-grid-margin,
   * + .dcf-grid-margin {
-    margin-top: 40px;
+    margin-top: $dcf-spacement-large;
   }
 }
 
 .dcf-grid-small,
 .dcf-grid-column-small {
-  margin-left: -15px;
+  margin-left: -$dcf-spacement-small + $dcf-spacement-xsmall;
 }
 .dcf-grid-small > *,
 .dcf-grid-column-small > * {
-  padding-left: 15px;
+  padding-left: $dcf-spacement-small + $dcf-spacement-xsmall;
 }
 
 .dcf-grid + .dcf-grid-small,
@@ -59,16 +60,16 @@
 .dcf-grid-small > .dcf-grid-margin,
 .dcf-grid-row-small > .dcf-grid-margin,
 * + .dcf-grid-margin-small {
-  margin-top: 15px;
+  margin-top: $dcf-spacement-small + $dcf-spacement-xsmall;
 }
 
 .dcf-grid-medium,
 .dcf-grid-column-medium {
-  margin-left: -30px;
+  margin-left: -$dcf-spacement-medium;
 }
 .dcf-grid-medium > *,
 .dcf-grid-column-medium > * {
-  padding-left: 30px;
+  padding-left: $dcf-spacement-medium;
 }
 
 .dcf-grid + .dcf-grid-medium,
@@ -76,16 +77,16 @@
 .dcf-grid-medium > .dcf-grid-margin,
 .dcf-grid-row-medium > .dcf-grid-margin,
 * + .dcf-grid-margin-medium {
-  margin-top: 30px;
+  margin-top: $dcf-spacement-medium;
 }
 
 .dcf-grid-large,
 .dcf-grid-column-large {
-  margin-left: -40px;
+  margin-left: -$dcf-spacement-large;
 }
 .dcf-grid-large > *,
 .dcf-grid-column-large > * {
-  padding-left: 40px;
+  padding-left: $dcf-spacement-large;
 }
 
 .dcf-grid + .dcf-grid-large,
@@ -93,18 +94,17 @@
 .dcf-grid-large > .dcf-grid-margin,
 .dcf-grid-row-large > .dcf-grid-margin,
 * + .dcf-grid-margin-large {
-  margin-top: 40px;
+  margin-top: $dcf-spacement-large;
 }
 
-@media (min-width: 1200px) {
-
+@media (min-width: $dcf-width-xl) {
   .dcf-grid-large,
   .dcf-grid-column-large {
-    margin-left: -70px;
+    margin-left: -$dcf-spacement-large;
   }
   .dcf-grid-large > *,
   .dcf-grid-column-large > * {
-    padding-left: 70px;
+    padding-left: $dcf-spacement-large;
   }
 
   .dcf-grid + .dcf-grid-large,
@@ -112,7 +112,7 @@
   .dcf-grid-large > .dcf-grid-margin,
   .dcf-grid-row-large > .dcf-grid-margin,
   * + .dcf-grid-margin-large {
-    margin-top: 70px;
+    margin-top: $dcf-spacement-large;
   }
 }
 
@@ -140,7 +140,7 @@
   position: absolute;
   top: 0;
   bottom: 0;
-  border-left: 1px solid #e5e5e5;
+  border-left: 1px solid var(--dcf-color-gray-2);
 }
 
 .dcf-grid-divider.dcf-grid-stack > .dcf-grid-margin::before {
@@ -148,174 +148,175 @@
   position: absolute;
   left: 0;
   right: 0;
-  border-top: 1px solid #e5e5e5;
+  border-top: 1px solid var(--dcf-color-gray-2);
 }
 
 .dcf-grid-divider {
-  margin-left: -60px;
+  margin-left: -$dcf-spacement-medium * 2;
 }
 .dcf-grid-divider > * {
-  padding-left: 60px;
+  padding-left: $dcf-spacement-medium * 2;
 }
 .dcf-grid-divider > :not(.dcf-first-column)::before {
-  left: 30px;
+  left: $dcf-spacement-medium;
 }
 
 .dcf-grid-divider.dcf-grid-stack > .dcf-grid-margin {
-  margin-top: 60px;
+  margin-top: $dcf-spacement-medium * 2;
 }
 .dcf-grid-divider.dcf-grid-stack > .dcf-grid-margin::before {
-  top: -30px;
-  left: 60px;
+  top: -$dcf-spacement-medium;
+  left: $dcf-spacement-medium * 2;
 }
 
-@media (min-width: 1200px) {
-
+@media (min-width: $dcf-width-xl) {
   .dcf-grid-divider {
-    margin-left: -80px;
+    margin-left: -$dcf-spacement-large * 2;
   }
   .dcf-grid-divider > * {
-    padding-left: 80px;
+    padding-left: $dcf-spacement-large * 2;
   }
   .dcf-grid-divider > :not(.dcf-first-column)::before {
-    left: 40px;
+    left: $dcf-spacement-large;
   }
 
   .dcf-grid-divider.dcf-grid-stack > .dcf-grid-margin {
-    margin-top: 80px;
+    margin-top: $dcf-spacement-large * 2;
   }
   .dcf-grid-divider.dcf-grid-stack > .dcf-grid-margin::before {
-    top: -40px;
-    left: 80px;
+    top: -$dcf-spacement-large;
+    left: $dcf-spacement-large * 2;
   }
 }
 
 .dcf-grid-divider.dcf-grid-small,
 .dcf-grid-divider.dcf-grid-column-small {
-  margin-left: -30px;
+  margin-left: -$dcf-spacement-medium;
 }
 .dcf-grid-divider.dcf-grid-small > *,
 .dcf-grid-divider.dcf-grid-column-small > * {
-  padding-left: 30px;
+  padding-left: $dcf-spacement-medium;
 }
 .dcf-grid-divider.dcf-grid-small > :not(.dcf-first-column)::before,
 .dcf-grid-divider.dcf-grid-column-small > :not(.dcf-first-column)::before {
-  left: 15px;
+  left: $dcf-spacement-small + $dcf-spacement-xsmall;
 }
 
 .dcf-grid-divider.dcf-grid-small.dcf-grid-stack > .dcf-grid-margin,
 .dcf-grid-divider.dcf-grid-row-small.dcf-grid-stack > .dcf-grid-margin {
-  margin-top: 30px;
+  margin-top: $dcf-spacement-medium;
 }
 .dcf-grid-divider.dcf-grid-small.dcf-grid-stack > .dcf-grid-margin::before {
-  top: -15px;
-  left: 30px;
+  top: -$dcf-spacement-small + $dcf-spacement-xsmall;
+  left: $dcf-spacement-medium;
 }
 .dcf-grid-divider.dcf-grid-row-small.dcf-grid-stack > .dcf-grid-margin::before {
-  top: -15px;
+  top: -$dcf-spacement-small + $dcf-spacement-xsmall;
 }
-.dcf-grid-divider.dcf-grid-column-small.dcf-grid-stack > .dcf-grid-margin::before {
-  left: 30px;
+.dcf-grid-divider.dcf-grid-column-small.dcf-grid-stack
+  > .dcf-grid-margin::before {
+  left: $dcf-spacement-medium;
 }
 
 .dcf-grid-divider.dcf-grid-medium,
 .dcf-grid-divider.dcf-grid-column-medium {
-  margin-left: -60px;
+  margin-left: -$dcf-spacement-medium * 2;
 }
 .dcf-grid-divider.dcf-grid-medium > *,
 .dcf-grid-divider.dcf-grid-column-medium > * {
-  padding-left: 60px;
+  padding-left: $dcf-spacement-medium * 2;
 }
 .dcf-grid-divider.dcf-grid-medium > :not(.dcf-first-column)::before,
 .dcf-grid-divider.dcf-grid-column-medium > :not(.dcf-first-column)::before {
-  left: 30px;
+  left: $dcf-spacement-medium;
 }
 
 .dcf-grid-divider.dcf-grid-medium.dcf-grid-stack > .dcf-grid-margin,
 .dcf-grid-divider.dcf-grid-row-medium.dcf-grid-stack > .dcf-grid-margin {
-  margin-top: 60px;
+  margin-top: $dcf-spacement-medium * 2;
 }
 .dcf-grid-divider.dcf-grid-medium.dcf-grid-stack > .dcf-grid-margin::before {
-  top: -30px;
-  left: 60px;
+  top: -$dcf-spacement-medium;
+  left: $dcf-spacement-medium * 2;
 }
-.dcf-grid-divider.dcf-grid-row-medium.dcf-grid-stack > .dcf-grid-margin::before {
-  top: -30px;
+.dcf-grid-divider.dcf-grid-row-medium.dcf-grid-stack
+  > .dcf-grid-margin::before {
+  top: -$dcf-spacement-medium;
 }
-.dcf-grid-divider.dcf-grid-column-medium.dcf-grid-stack > .dcf-grid-margin::before {
-  left: 60px;
+.dcf-grid-divider.dcf-grid-column-medium.dcf-grid-stack
+  > .dcf-grid-margin::before {
+  left: $dcf-spacement-medium * 2;
 }
 
 .dcf-grid-divider.dcf-grid-large,
 .dcf-grid-divider.dcf-grid-column-large {
-  margin-left: -80px;
+  margin-left: -$dcf-spacement-large * 2;
 }
 .dcf-grid-divider.dcf-grid-large > *,
 .dcf-grid-divider.dcf-grid-column-large > * {
-  padding-left: 80px;
+  padding-left: $dcf-spacement-large * 2;
 }
 .dcf-grid-divider.dcf-grid-large > :not(.dcf-first-column)::before,
 .dcf-grid-divider.dcf-grid-column-large > :not(.dcf-first-column)::before {
-  left: 40px;
+  left: $dcf-spacement-large;
 }
 
 .dcf-grid-divider.dcf-grid-large.dcf-grid-stack > .dcf-grid-margin,
 .dcf-grid-divider.dcf-grid-row-large.dcf-grid-stack > .dcf-grid-margin {
-  margin-top: 80px;
+  margin-top: $dcf-spacement-large * 2;
 }
 .dcf-grid-divider.dcf-grid-large.dcf-grid-stack > .dcf-grid-margin::before {
-  top: -40px;
-  left: 80px;
+  top: -$dcf-spacement-large;
+  left: $dcf-spacement-large * 2;
 }
 .dcf-grid-divider.dcf-grid-row-large.dcf-grid-stack > .dcf-grid-margin::before {
-  top: -40px;
+  top: -$dcf-spacement-large;
 }
-.dcf-grid-divider.dcf-grid-column-large.dcf-grid-stack > .dcf-grid-margin::before {
-  left: 80px;
+.dcf-grid-divider.dcf-grid-column-large.dcf-grid-stack
+  > .dcf-grid-margin::before {
+  left: $dcf-spacement-large * 2;
 }
 
-@media (min-width: 1200px) {
-
+@media (min-width: $dcf-width-xl) {
   .dcf-grid-divider.dcf-grid-large,
   .dcf-grid-divider.dcf-grid-column-large {
-    margin-left: -140px;
+    margin-left: -1$dcf-spacement-large;
   }
   .dcf-grid-divider.dcf-grid-large > *,
   .dcf-grid-divider.dcf-grid-column-large > * {
-    padding-left: 140px;
+    padding-left: 1$dcf-spacement-large;
   }
   .dcf-grid-divider.dcf-grid-large > :not(.dcf-first-column)::before,
   .dcf-grid-divider.dcf-grid-column-large > :not(.dcf-first-column)::before {
-    left: 70px;
+    left: $dcf-spacement-large;
   }
 
   .dcf-grid-divider.dcf-grid-large.dcf-grid-stack > .dcf-grid-margin,
   .dcf-grid-divider.dcf-grid-row-large.dcf-grid-stack > .dcf-grid-margin {
-    margin-top: 140px;
+    margin-top: 1$dcf-spacement-large;
   }
   .dcf-grid-divider.dcf-grid-large.dcf-grid-stack > .dcf-grid-margin::before {
-    top: -70px;
-    left: 140px;
+    top: -$dcf-spacement-large;
+    left: 1$dcf-spacement-large;
   }
-  .dcf-grid-divider.dcf-grid-row-large.dcf-grid-stack > .dcf-grid-margin::before {
-    top: -70px;
+  .dcf-grid-divider.dcf-grid-row-large.dcf-grid-stack
+    > .dcf-grid-margin::before {
+    top: -$dcf-spacement-large;
   }
-  .dcf-grid-divider.dcf-grid-column-large.dcf-grid-stack > .dcf-grid-margin::before {
-    left: 140px;
+  .dcf-grid-divider.dcf-grid-column-large.dcf-grid-stack
+    > .dcf-grid-margin::before {
+    left: 1$dcf-spacement-large;
   }
 }
 
 .dcf-grid-match > *,
 .dcf-grid-item-match {
   display: flex;
-
   flex-wrap: wrap;
 }
 .dcf-grid-match > * > :not([class*="dcf-width"]),
 .dcf-grid-item-match > :not([class*="dcf-width"]) {
-
   box-sizing: border-box;
   width: 100%;
-
   flex: auto;
 }

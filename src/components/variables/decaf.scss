@@ -1,0 +1,25 @@
+$dcf-spacement: 1.25rem; // 20px
+$dcf-spacement-xsmall: 0.3125rem; // 5px
+$dcf-spacement-small: 0.625rem; // 10px
+$dcf-spacement-medium: 1.875rem; // 30px
+$dcf-spacement-large: 2.5rem; // 40px
+$dcf-spacement-xlarge: 4.375rem; // 70px
+$dcf-spacement-2xlarge: $dcf-spacement-xlarge * 2; // 140px
+
+$dcf-width-s: 576px;
+$dcf-width-m: 768px;
+$dcf-width-l: 992px;
+$dcf-width-xl: 1200px;
+$dcf-width-2xl: 1400px;
+
+$dcf-width-small: $dcf-width-s;
+$dcf-width-medium: $dcf-width-m;
+$dcf-width-large: $dcf-width-l;
+$dcf-width-xlarge: $dcf-width-xl;
+$dcf-width-2xlarge: $dcf-width-2xl;
+
+$border-radius: 8px;
+$border-radius-small: 6px;
+$border-radius-large: 12px;
+
+$text-color: #414651; // gray-7

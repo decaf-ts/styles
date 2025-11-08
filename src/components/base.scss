@@ -1,6 +1,10 @@
-html, body, * {
-    font-family: var(--dcf-font-family);
-    font-style: normal;
+@use "variables/decaf.scss" as *;
+
+html,
+body,
+* {
+  font-family: var(--dcf-font-family);
+  font-style: normal;
 }
 
 .dcf-text-lead {
@@ -64,7 +68,7 @@ html, body, * {
   text-transform: lowercase !important;
 }
 
- [class*="dcf-child-width"] > * {
+[class*="dcf-child-width"] > * {
   box-sizing: border-box;
   width: 100%;
 }
@@ -93,7 +97,7 @@ html, body, * {
   min-width: 1px;
 }
 
-@media (min-width: 576px) {
+@media (min-width: $dcf-width-small) {
   .dcf-child-width-1-1\@s > * {
     width: 100%;
   }
@@ -131,7 +135,7 @@ html, body, * {
   }
 }
 
-@media (min-width: 768px) {
+@media (min-width: $dcf-width-m) {
   .dcf-child-width-1-1\@m > * {
     width: 100%;
   }
@@ -169,7 +173,7 @@ html, body, * {
   }
 }
 
-@media (min-width: 992px) {
+@media (min-width: $dcf-width-l) {
   .dcf-child-width-1-1\@l > * {
     width: 100%;
   }
@@ -207,7 +211,7 @@ html, body, * {
   }
 }
 
-@media (min-width: 1200px) {
+@media (min-width: $dcf-width-xl) {
   .dcf-child-width-1-1\@xl > * {
     width: 100%;
   }
@@ -315,8 +319,7 @@ html, body, * {
   min-width: 1px;
 }
 
-@media (min-width: 576px) {
-
+@media (min-width: $dcf-width-small) {
   .dcf-width-1-1\@s {
     width: 100%;
   }
@@ -406,8 +409,7 @@ html, body, * {
   }
 }
 
-@media (min-width: 768px) {
-
+@media (min-width: $dcf-width-m) {
   .dcf-width-1-1\@m {
     width: 100%;
   }
@@ -497,8 +499,7 @@ html, body, * {
   }
 }
 
-@media (min-width: 992px) {
-
+@media (min-width: $dcf-width-l) {
   .dcf-width-1-1\@l {
     width: 100%;
   }
@@ -588,8 +589,7 @@ html, body, * {
   }
 }
 
-@media (min-width: 1200px) {
-
+@media (min-width: $dcf-width-xl) {
   .dcf-width-1-1\@xl {
     width: 100%;
   }

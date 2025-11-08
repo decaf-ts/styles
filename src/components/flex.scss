@@ -1,4 +1,6 @@
- .dcf-flex {
+@use "variables/decaf.scss" as *;
+
+.dcf-flex {
   display: flex;
 }
 .dcf-flex-inline {
@@ -28,7 +30,7 @@
   justify-content: space-around;
 }
 
-@media (min-width: 576px) {
+@media (min-width: $dcf-width-small) {
   .dcf-flex-left\@s {
     justify-content: flex-start;
   }
@@ -46,7 +48,7 @@
   }
 }
 
-@media (min-width: 768px) {
+@media (min-width: $dcf-width-m) {
   .dcf-flex-left\@m {
     justify-content: flex-start;
   }
@@ -64,7 +66,7 @@
   }
 }
 
-@media (min-width: 992px) {
+@media (min-width: $dcf-width-large) {
   .dcf-flex-left\@l {
     justify-content: flex-start;
   }
@@ -82,7 +84,7 @@
   }
 }
 
-@media (min-width: 992px) {
+@media (min-width: $dcf-width-xl) {
   .dcf-flex-left\@xl {
     justify-content: flex-start;
   }
@@ -162,7 +164,7 @@
   order: 99;
 }
 
-@media (min-width: 576px) {
+@media (min-width: $dcf-width-small) {
   .dcf-flex-first\@s {
     order: -1;
   }
@@ -171,7 +173,7 @@
   }
 }
 
-@media (min-width: 768px) {
+@media (min-width: $dcf-width-m) {
   .dcf-flex-first\@m {
     order: -1;
   }
@@ -180,7 +182,7 @@
   }
 }
 
-@media (min-width: 992px) {
+@media (min-width: $dcf-width-l) {
   .dcf-flex-first\@l {
     order: -1;
   }
@@ -189,11 +191,20 @@
   }
 }
 
-@media (min-width: 1200px) {
+@media (min-width: $dcf-width-xl) {
   .dcf-flex-first\@xl {
     order: -1;
   }
   .dcf-flex-last\@xl {
+    order: 99;
+  }
+}
+
+@media (min-width: $dcf-width-2xl) {
+  .dcf-flex-first\@2xl {
+    order: -1;
+  }
+  .dcf-flex-last\@2xl {
     order: 99;
   }
 }
