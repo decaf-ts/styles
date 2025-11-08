@@ -1,11 +1,12 @@
 // Made based on https://cdnjs.cloudflare.com/ajax/libs/uikit/3.22.1/css/uikit.css
-
+@use "components/variables/decaf.scss" as *;
 @forward "core.scss";
 @forward "components/grid.scss";
 @forward "components/flex.scss";
 @forward "components/spacement.scss";
 @forward "components/visibility.scss";
 @forward "components/animations.scss";
+@forward "components/variables/ionic.scss";
 
 // ionic fixes
 ion-app {
@@ -37,6 +38,7 @@ ion-app {
     &.select-fill-outline {
       --border-radius: var(--dcf-border-radius);
     }
+
     &::part(error-text) {
       margin-left: -1rem !important;
       height: 0px;
@@ -61,27 +63,33 @@ ion-app {
       font-weight: 500;
     }
 
-    @media (prefers-color-scheme: light) {
-      --border-color: var(--dcf-color-gray-3) !important;
-      ion-label,
-      label,
-      &::part(label) {
-        color: var(--dcf-color-gray-7) !important;
-      }
+    --border-color: var(--dcf-color-gray-3) !important;
+    ion-label,
+    label,
+    &::part(label) {
+      color: var(--dcf-color-gray-7) !important;
     }
+    // @media (prefers-color-scheme: light) {
+    //   --border-color: var(--dcf-color-gray-3) !important;
+    //   ion-label,
+    //   label,
+    //   &::part(label) {
+    //     color: var(--dcf-color-gray-7) !important;
+    //   }
+    // }
 
-    @media (prefers-color-scheme: dark) {
-      --placeholder-color: var(--dcf-color-gray-1) !important;
-      ion-label,
-      label,
-      &::part(label) {
-        color: var(--dcf-color-gray-3) !important;
-      }
-      // figma
-      &:not(:hover) {
-        --border-color: var(--dcf-color-step-500) !important;
-      }
-    }
+    // @media (prefers-color-scheme: dark) {
+    //   --placeholder-color: var(--dcf-color-gray-1) !important;
+    //   ion-label,
+    //   label,
+    //   &::part(label) {
+    //     color: var(--dcf-color-gray-3) !important;
+    //   }
+    //   // figma
+    //   &:not(:hover) {
+    //     --border-color: var(--dcf-color-step-500) !important;
+    //   }
+    // }
   }
 
   .alert-radio-label,
@@ -126,7 +134,7 @@ ion-app {
     &.dcf-card-default {
       box-shadow: none;
       ion-card-title {
-        padding: 1rem 1rem 0rem 1rem !important;
+        padding: $dcf-spacement $dcf-spacement 0rem $dcf-spacement !important;
       }
 
       ion-card-header + ion-card-content {
@@ -134,11 +142,12 @@ ion-app {
       }
 
       ion-card-content {
-        margin-top: 1rem;
+        margin-top: $dcf-spacement;
       }
-      @media (prefers-color-scheme: light) {
-        border: 1px solid var(--dcf-color-gray-2);
-      }
+      border: 1px solid var(--dcf-color-gray-2);
+      // @media (prefers-color-scheme: light) {
+      //   border: 1px solid var(--dcf-color-gray-2);
+      // }
       // @media (prefers-color-scheme: dark) { border: 1px solid var(--dcf-color-gray-7); }
     }
   }
@@ -192,7 +201,7 @@ ngx-decaf-fieldset {
   }
   // fieldset inside fieldset
   &.dcf-fieldset .dcf-fieldset {
-    margin-top: 2.25rem !important;
+    margin-top: $dcf-spacement-medium + $dcf-spacement-xsmall !important;
   }
 }
 
@@ -208,9 +217,10 @@ ngx-decaf-crud-field {
 }
 
 a {
-  @media (prefers-color-scheme: light) {
-    color: var(--dcf-color-dark);
-  }
+  // @media (prefers-color-scheme: light) {
+  //   color: var(--dcf-color-dark);
+  // }
+  color: var(--dcf-color-primary-shade);
   font-weight: 500;
 }
 
@@ -314,7 +324,7 @@ textarea {
 }
 
 // TODO: Fixes on grid
-@media (max-width: 576px) {
+@media (max-width: $dcf-width-s) {
   .dcf-grid-small,
   .dcf-grid-column-small {
     margin-left: 0 !important;

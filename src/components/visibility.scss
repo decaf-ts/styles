@@ -1,53 +1,86 @@
+@use "variables/decaf.scss" as *;
+
+@mixin hiddenOn($breakpoint, $rule: min-width) {
+  $width: if($rule == "min-width", $breakpoint - 1px, $breakpoint);
+  @media (#{$rule}: $width) {
+    @content;
+  }
+}
+
+@mixin visibleOn($breakpoint) {
+  @include hiddenOn($breakpoint, max-width) {
+    @content;
+  }
+}
+
 [hidden],
 .dcf-hidden,
 .dcf-hidden-empty:empty {
   display: none !important;
 }
 
-@media (min-width: 576px) {
+@include hiddenOn($dcf-width-s) {
   .dcf-hidden\@s {
     display: none !important;
   }
 }
 
-@media (min-width: 768px) {
+// @media (min-width: 576px) {
+//   .dcf-hidden\@s {
+//     display: none !important;
+//   }
+// }
+
+@include hiddenOn($dcf-width-m) {
   .dcf-hidden\@m {
     display: none !important;
   }
 }
 
-@media (min-width: 992px) {
+@include hiddenOn($dcf-width-l) {
   .dcf-hidden\@l {
     display: none !important;
   }
 }
 
-@media (min-width: 1200px) {
+@include hiddenOn($dcf-width-xl) {
   .dcf-hidden\@xl {
     display: none !important;
   }
 }
 
-@media (max-width: 575px) {
+@include hiddenOn($dcf-width-2xl) {
+  .dcf-hidden\@2xl {
+    display: none !important;
+  }
+}
+
+@include visibleOn($dcf-width-s) {
   .dcf-visible\@s {
     display: none !important;
   }
 }
 
-@media (max-width: 767px) {
+@include visibleOn($dcf-width-m) {
   .dcf-visible\@m {
     display: none !important;
   }
 }
 
-@media (max-width: 991px) {
+@include visibleOn($dcf-width-l) {
   .dcf-visible\@l {
     display: none !important;
   }
 }
 
-@media (max-width: 1199px) {
+@include visibleOn($dcf-width-xl) {
   .dcf-visible\@xl {
+    display: none !important;
+  }
+}
+
+@include visibleOn($dcf-width-2xl) {
+  .dcf-visible\@2xl {
     display: none !important;
   }
 }

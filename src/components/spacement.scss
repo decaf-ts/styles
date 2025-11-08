@@ -1,156 +1,158 @@
+@use "variables/decaf.scss" as *;
+
 .dcf-margin {
-  margin-bottom: 20px;
+  margin-bottom: $dcf-spacement;
 }
 * + .dcf-margin {
-  margin-top: 20px !important;
+  margin-top: $dcf-spacement !important;
 }
 .dcf-margin-top {
-  margin-top: 20px !important;
+  margin-top: $dcf-spacement !important;
 }
 .dcf-margin-bottom {
-  margin-bottom: 20px !important;
+  margin-bottom: $dcf-spacement !important;
 }
 .dcf-margin-left {
-  margin-left: 20px !important;
+  margin-left: $dcf-spacement !important;
 }
 .dcf-margin-right {
-  margin-right: 20px !important;
+  margin-right: $dcf-spacement !important;
 }
 
 .dcf-margin-xsmall {
-  margin-bottom: 5px;
+  margin-bottom: $dcf-spacement-xsmall;
 }
 * + .dcf-margin-xsmall {
-  margin-top: 5px !important;
+  margin-top: $dcf-spacement-xsmall !important;
 }
 .dcf-margin-xsmall-top {
-  margin-top: 5px !important;
+  margin-top: $dcf-spacement-xsmall !important;
 }
 .dcf-margin-xsmall-bottom {
-  margin-bottom: 5px !important;
+  margin-bottom: $dcf-spacement-xsmall !important;
 }
 .dcf-margin-xsmall-left {
-  margin-left: 5px !important;
+  margin-left: $dcf-spacement-xsmall !important;
 }
 .dcf-margin-xsmall-right {
-  margin-right: 5px !important;
+  margin-right: $dcf-spacement-xsmall !important;
 }
 
 .dcf-margin-small {
-  margin-bottom: 10px;
+  margin-bottom: $dcf-spacement-small;
 }
 * + .dcf-margin-small {
-  margin-top: 10px !important;
+  margin-top: $dcf-spacement-small !important;
 }
 .dcf-margin-small-top {
-  margin-top: 10px !important;
+  margin-top: $dcf-spacement-small !important;
 }
 .dcf-margin-small-bottom {
-  margin-bottom: 10px !important;
+  margin-bottom: $dcf-spacement-small !important;
 }
 .dcf-margin-small-left {
-  margin-left: 10px !important;
+  margin-left: $dcf-spacement-small !important;
 }
 .dcf-margin-small-right {
-  margin-right: 10px !important;
+  margin-right: $dcf-spacement-small !important;
 }
 
 .dcf-margin-medium {
-  margin-bottom: 40px;
+  margin-bottom: $dcf-spacement-medium;
 }
 * + .dcf-margin-medium {
-  margin-top: 40px !important;
+  margin-top: $dcf-spacement-medium !important;
 }
 .dcf-margin-medium-top {
-  margin-top: 40px !important;
+  margin-top: $dcf-spacement-medium !important;
 }
 .dcf-margin-medium-bottom {
-  margin-bottom: 40px !important;
+  margin-bottom: $dcf-spacement-medium !important;
 }
 .dcf-margin-medium-left {
-  margin-left: 40px !important;
+  margin-left: $dcf-spacement-medium !important;
 }
 .dcf-margin-medium-right {
-  margin-right: 40px !important;
+  margin-right: $dcf-spacement-medium !important;
 }
 
 .dcf-margin-large {
-  margin-bottom: 40px;
+  margin-bottom: $dcf-spacement-large;
 }
 * + .dcf-margin-large {
-  margin-top: 40px !important;
+  margin-top: $dcf-spacement-large !important;
 }
 .dcf-margin-large-top {
-  margin-top: 40px !important;
+  margin-top: $dcf-spacement-large !important;
 }
 .dcf-margin-large-bottom {
-  margin-bottom: 40px !important;
+  margin-bottom: $dcf-spacement-large !important;
 }
 .dcf-margin-large-left {
-  margin-left: 40px !important;
+  margin-left: $dcf-spacement-large !important;
 }
 .dcf-margin-large-right {
-  margin-right: 40px !important;
+  margin-right: $dcf-spacement-large !important;
 }
 
-@media (min-width: 1200px) {
+@media (min-width: $dcf-width-xl) {
   .dcf-margin-large {
-    margin-bottom: 70px;
+    margin-bottom: $dcf-spacement-xlarge;
   }
   * + .dcf-margin-large {
-    margin-top: 70px !important;
+    margin-top: $dcf-spacement-xlarge !important;
   }
   .dcf-margin-large-top {
-    margin-top: 70px !important;
+    margin-top: $dcf-spacement-xlarge !important;
   }
   .dcf-margin-large-bottom {
-    margin-bottom: 70px !important;
+    margin-bottom: $dcf-spacement-xlarge !important;
   }
   .dcf-margin-large-left {
-    margin-left: 70px !important;
+    margin-left: $dcf-spacement-xlarge !important;
   }
   .dcf-margin-large-right {
-    margin-right: 70px !important;
+    margin-right: $dcf-spacement-xlarge !important;
   }
 }
 
 .dcf-margin-xlarge {
-  margin-bottom: 70px;
+  margin-bottom: $dcf-spacement-2xlarge;
 }
 * + .dcf-margin-xlarge {
-  margin-top: 70px !important;
+  margin-top: $dcf-spacement-2xlarge !important;
 }
 .dcf-margin-xlarge-top {
-  margin-top: 70px !important;
+  margin-top: $dcf-spacement-2xlarge !important;
 }
 .dcf-margin-xlarge-bottom {
-  margin-bottom: 70px !important;
+  margin-bottom: $dcf-spacement-2xlarge !important;
 }
 .dcf-margin-xlarge-left {
-  margin-left: 70px !important;
+  margin-left: $dcf-spacement-2xlarge !important;
 }
 .dcf-margin-xlarge-right {
-  margin-right: 70px !important;
+  margin-right: $dcf-spacement-2xlarge !important;
 }
 
-@media (min-width: 1200px) {
+@media (min-width: $dcf-width-xl) {
   .dcf-margin-xlarge {
-    margin-bottom: 140px;
+    margin-bottom: $dcf-spacement-2xlarge;
   }
   * + .dcf-margin-xlarge {
-    margin-top: 140px !important;
+    margin-top: $dcf-spacement-2xlarge !important;
   }
   .dcf-margin-xlarge-top {
-    margin-top: 140px !important;
+    margin-top: $dcf-spacement-2xlarge !important;
   }
   .dcf-margin-xlarge-bottom {
-    margin-bottom: 140px !important;
+    margin-bottom: $dcf-spacement-2xlarge !important;
   }
   .dcf-margin-xlarge-left {
-    margin-left: 140px !important;
+    margin-left: $dcf-spacement-2xlarge !important;
   }
   .dcf-margin-xlarge-right {
-    margin-right: 140px !important;
+    margin-right: $dcf-spacement-2xlarge !important;
   }
 }
 
@@ -175,7 +177,7 @@
   margin-bottom: auto !important;
 }
 
-@media (min-width: 576px) {
+@media (min-width: $dcf-width-s) {
   .dcf-margin-auto\@s {
     margin-left: auto !important;
     margin-right: auto !important;
@@ -188,7 +190,7 @@
   }
 }
 
-@media (min-width: 768px) {
+@media (min-width: $dcf-width-m) {
   .dcf-margin-auto\@m {
     margin-left: auto !important;
     margin-right: auto !important;
@@ -201,7 +203,7 @@
   }
 }
 
-@media (min-width: 1200px) {
+@media (min-width: $dcf-width-xl) {
   .dcf-margin-auto\@l {
     margin-left: auto !important;
     margin-right: auto !important;
@@ -214,7 +216,7 @@
   }
 }
 
-@media (min-width: 1200px) {
+@media (min-width: $dcf-width-xl) {
   .dcf-margin-auto\@xl {
     margin-left: auto !important;
     margin-right: auto !important;
@@ -254,7 +256,7 @@
   margin-bottom: 0 !important;
 }
 
-@media (min-width: 576px) {
+@media (min-width: $dcf-width-s) {
   .dcf-margin-remove-left\@s {
     margin-left: 0 !important;
   }
@@ -263,7 +265,7 @@
   }
 }
 
-@media (min-width: 768px) {
+@media (min-width: $dcf-width-m) {
   .dcf-margin-remove-left\@m {
     margin-left: 0 !important;
   }
@@ -272,7 +274,7 @@
   }
 }
 
-@media (min-width: 1200px) {
+@media (min-width: $dcf-width-xl) {
   .dcf-margin-remove-left\@l {
     margin-left: 0 !important;
   }
@@ -281,7 +283,7 @@
   }
 }
 
-@media (min-width: 1200px) {
+@media (min-width: $dcf-width-xl) {
   .dcf-margin-remove-left\@xl {
     margin-left: 0 !important;
   }
@@ -291,26 +293,49 @@
 }
 
 .dcf-padding {
-  padding: 30px;
+  padding: $dcf-spacement-medium;
 }
 
-@media (min-width: 1200px) {
+@media (min-width: $dcf-width-xl) {
   .dcf-padding {
-    padding: 40px;
+    padding: $dcf-spacement-large;
   }
 }
 
+@media (min-width: $dcf-width-2xl) {
+  .dcf-padding {
+    padding: $dcf-spacement-large + $dcf-spacement-medium;
+  }
+}
+
+.dcf-padding-xsmall {
+  padding: $dcf-spacement-small;
+}
+
 .dcf-padding-small {
-  padding: 15px;
+  padding: $dcf-spacement-small + $dcf-spacement-xsmall;
 }
-
 .dcf-padding-large {
-  padding: 40px;
+  padding: $dcf-spacement-large;
 }
 
-@media (min-width: 1200px) {
+.dcf-padding-xlarge {
+  padding: $dcf-spacement-xlarge;
+}
+
+.dcf-padding-2xlarge {
+  padding: $dcf-spacement-2xlarge;
+}
+
+@media (min-width: $dcf-width-xl) {
   .dcf-padding-large {
-    padding: 70px;
+    padding: $dcf-spacement-xlarge;
+  }
+}
+
+@media (min-width: $dcf-width-xl) {
+  .dcf-padding-large {
+    padding: $dcf-spacement-xlarge + $dcf-spacement-medium;
   }
 }
 
