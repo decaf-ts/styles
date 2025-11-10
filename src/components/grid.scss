@@ -48,7 +48,7 @@
 
 .dcf-grid-small,
 .dcf-grid-column-small {
-  margin-left: -$dcf-spacement-small + $dcf-spacement-xsmall;
+  margin-left: ($dcf-spacement - $dcf-spacement-xsmall) * -1;
 }
 .dcf-grid-small > *,
 .dcf-grid-column-small > * {
@@ -280,11 +280,11 @@
 @media (min-width: $dcf-width-xl) {
   .dcf-grid-divider.dcf-grid-large,
   .dcf-grid-divider.dcf-grid-column-large {
-    margin-left: -1$dcf-spacement-large;
+    margin-left: $dcf-spacement-large;
   }
   .dcf-grid-divider.dcf-grid-large > *,
   .dcf-grid-divider.dcf-grid-column-large > * {
-    padding-left: 1$dcf-spacement-large;
+    padding-left: $dcf-spacement-large;
   }
   .dcf-grid-divider.dcf-grid-large > :not(.dcf-first-column)::before,
   .dcf-grid-divider.dcf-grid-column-large > :not(.dcf-first-column)::before {
@@ -293,11 +293,11 @@
 
   .dcf-grid-divider.dcf-grid-large.dcf-grid-stack > .dcf-grid-margin,
   .dcf-grid-divider.dcf-grid-row-large.dcf-grid-stack > .dcf-grid-margin {
-    margin-top: 1$dcf-spacement-large;
+    margin-top: $dcf-spacement-large;
   }
   .dcf-grid-divider.dcf-grid-large.dcf-grid-stack > .dcf-grid-margin::before {
     top: -$dcf-spacement-large;
-    left: 1$dcf-spacement-large;
+    left: $dcf-spacement-large;
   }
   .dcf-grid-divider.dcf-grid-row-large.dcf-grid-stack
     > .dcf-grid-margin::before {
@@ -305,7 +305,7 @@
   }
   .dcf-grid-divider.dcf-grid-column-large.dcf-grid-stack
     > .dcf-grid-margin::before {
-    left: 1$dcf-spacement-large;
+    left: $dcf-spacement-large;
   }
 }
 

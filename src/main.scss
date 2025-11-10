@@ -99,12 +99,6 @@ ion-app {
     text-transform: capitalize;
   }
 
-  ion-card {
-    ngx-decaf-empty-state ion-card {
-      box-shadow: none;
-    }
-  }
-
   // ***** Figma
   ion-popover::part(content) {
     border-radius: var(--dcf-border-radius);
@@ -130,27 +124,33 @@ ion-app {
     }
   }
 
-  ion-card {
-    &.dcf-card-default {
-      box-shadow: none;
-      ion-card-title {
-        padding: $dcf-spacement $dcf-spacement 0rem $dcf-spacement !important;
-      }
+  // ion-card {
+  //   ngx-decaf-empty-state ion-card {
+  //     box-shadow: none;
+  //   }
+  // }
 
-      ion-card-header + ion-card-content {
-        margin-top: 0.5rem;
-      }
+  // ion-card {
+  //   &.dcf-card-default {
+  //     box-shadow: none;
+  //     ion-card-title {
+  //       padding: $dcf-spacement $dcf-spacement 0rem $dcf-spacement !important;
+  //     }
 
-      ion-card-content {
-        margin-top: $dcf-spacement;
-      }
-      border: 1px solid var(--dcf-color-gray-2);
-      // @media (prefers-color-scheme: light) {
-      //   border: 1px solid var(--dcf-color-gray-2);
-      // }
-      // @media (prefers-color-scheme: dark) { border: 1px solid var(--dcf-color-gray-7); }
-    }
-  }
+  //     ion-card-header + ion-card-content {
+  //       margin-top: 0.5rem;
+  //     }
+
+  //     ion-card-content {
+  //       margin-top: $dcf-spacement;
+  //     }
+  //     border: 1px solid var(--dcf-color-gray-2);
+  //     // @media (prefers-color-scheme: light) {
+  //     //   border: 1px solid var(--dcf-color-gray-2);
+  //     // }
+  //     // @media (prefers-color-scheme: dark) { border: 1px solid var(--dcf-color-gray-7); }
+  //   }
+  // }
 }
 
 // fixes for model rederer component in grid
@@ -324,13 +324,13 @@ textarea {
 }
 
 // TODO: Fixes on grid
-@media (max-width: $dcf-width-s) {
-  .dcf-grid-small,
-  .dcf-grid-column-small {
-    margin-left: 0 !important;
-  }
-  .dcf-grid-small > *,
-  .dcf-grid-column-small > * {
-    padding-left: 0 !important;
-  }
-}
+// @media (max-width: $dcf-width-s) {
+//   .dcf-grid-small,
+//   .dcf-grid-column-small {
+//     margin-left: 0 !important;
+//   }
+//   .dcf-grid-small > *,
+//   .dcf-grid-column-small > * {
+//     padding-left: 0 !important;
+//   }
+// }
