@@ -16,8 +16,11 @@
 
   // border radius
   --dcf-border-radius: #{$border-radius};
+  --dcf-border-radius-xsmall: #{$border-radius-xsmall};
   --dcf-border-radius-small: #{$border-radius-small};
   --dcf-border-radius-large: #{$border-radius-large};
+
+  --dcf-spacement: #{$dcf-spacement};
 
   // margins
   --dcf-margin: #{$dcf-spacement};
@@ -37,6 +40,10 @@
   --dcf-padding-xlarge: #{$dcf-spacement-xlarge};
   --dcf-padding-2xlarge: #{$dcf-spacement-2xlarge};
 
+  // utilitys
+  --dcf-card-box-shadow: #{$card-box-shadow};
+
+  // colors
   --dcf-color-primary: #3460dc;
   --dcf-color-primary-rgb: 52, 96, 220;
   --dcf-color-primary-contrast: #ffffff;
@@ -419,13 +426,12 @@ ion-card {
     }
   }
 
-  ion-card {
-    &.dcf-card-default {
-      border-color: var(--dcf-card-background);
-      // @media (prefers-color-scheme: dark) { border: 1px solid var(--dcf-color-gray-7); }
-    }
-  }
-
+  // ion-card {
+  //   &.dcf-card-default {
+  //     border-color: var(--dcf-card-background);
+  //     // @media (prefers-color-scheme: dark) { border: 1px solid var(--dcf-color-gray-7); }
+  //   }
+  // }
   ion-select::part(text) {
     color: var(--dcf-color-gray-2);
   }
