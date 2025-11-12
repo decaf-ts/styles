@@ -21,6 +21,12 @@
   --dcf-border-radius-large: #{$border-radius-large};
 
   --dcf-spacement: #{$dcf-spacement};
+  --dcf-spacement-xsmall: #{$dcf-spacement-xsmall};
+  --dcf-spacement-small: #{$dcf-spacement-small};
+  --dcf-spacement-medium: #{$dcf-spacement-medium};
+  --dcf-spacement-large: #{$dcf-spacement-large};
+  --dcf-spacement-xlarge: #{$dcf-spacement-xlarge};
+  --dcf-spacement-2xlarge: #{$dcf-spacement-2xlarge};
 
   // margins
   --dcf-margin: #{$dcf-spacement};
@@ -451,6 +457,7 @@ ion-card {
       }
     }
   }
+
   * {
     scrollbar-color: var(--dcf-color-dark) transparent;
   }
@@ -462,8 +469,11 @@ ion-card {
 html:not(.dcf-palette-dark) {
   /* Firefox */
   * {
+    &:not(:hover) {
+      scrollbar-color: var(--dcf-color-gray-2) transparent !important;
+    }
     // auto | thin | none
-    scrollbar-width: none !important; /*  */
+    scrollbar-width: thin !important; /*  */
     // thumb track
     scrollbar-color: var(--dcf-color-gray-4) transparent;
   }
