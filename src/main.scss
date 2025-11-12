@@ -1,6 +1,7 @@
 // Made based on https://cdnjs.cloudflare.com/ajax/libs/uikit/3.22.1/css/uikit.css
 @use "components/variables/decaf.scss" as *;
 @forward "core.scss";
+@forward "components/width.scss";
 @forward "components/grid.scss";
 @forward "components/flex.scss";
 @forward "components/spacement.scss";
