@@ -187,7 +187,7 @@ ion-app {
 ngx-decaf-fieldset {
   ion-accordion {
     ion-item[slot="header"] {
-      &.disable-collapse {
+      &.dcf-disabled {
         cursor: text;
         .ion-accordion-toggle-icon {
           display: none;
