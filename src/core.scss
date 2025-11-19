@@ -5,6 +5,9 @@
 :root {
   --dcf-default-dynamic-font: "Inter", sans-serif;
   --dcf-input-fill-background: #ffffff;
+  --dcf-card-background: #fff;
+  --dcf-content-background: var(--dcf-color-gray-1);
+
   // base text color
   --dcf-text-color: #{$text-color};
 
@@ -47,8 +50,11 @@
   --dcf-padding-2xlarge: #{$dcf-spacement-2xlarge};
 
   // utilitys
-  --dcf-card-box-shadow: #{$card-box-shadow};
-
+  --dcf-box-shadow: #{$box-shadow};
+  --dcf-box-shadow-small: #{$box-shadow-small};
+  --dcf-box-shadow-medium: #{$box-shadow-medium};
+  --dcf-box-shadow-large: #{$box-shadow-large};
+  --dcf-box-shadow-xlarge: #{$box-shadow-xlarge};
   // colors
   --dcf-color-primary: #3460dc;
   --dcf-color-primary-rgb: 52, 96, 220;
@@ -126,10 +132,10 @@
 }
 
 .dcf-palette-dark {
-  :root {
-    --dcf-input-fill-background: var(--dcf-color-step-100);
-    --dcf-text-color: #ffffff;
-  }
+  --dcf-content-background: transparent;
+  --dcf-input-fill-background: var(--dcf-color-step-100);
+  --dcf-text-color: #ffffff;
+
   /*
    * iOS Dark Theme
    * -------------------------------------------
