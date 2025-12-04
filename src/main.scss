@@ -184,27 +184,27 @@ ion-app {
 // }
 
 // Fieldset component customizations
-ngx-decaf-fieldset {
-  ion-accordion {
-    ion-item[slot="header"] {
-      &.dcf-disabled {
-        cursor: text;
-        .ion-accordion-toggle-icon {
-          display: none;
-        }
-        * {
-          pointer-events: none !important;
-          touch-action: none !important;
-          cursor: text;
-        }
-      }
-    }
-  }
-  // fieldset inside fieldset
-  &.dcf-fieldset .dcf-fieldset {
-    margin-top: $dcf-spacement-medium + $dcf-spacement-xsmall !important;
-  }
-}
+// ngx-decaf-fieldset {
+//   ion-accordion {
+//     ion-item[slot="header"] {
+//       &.dcf-disabled {
+//         cursor: text;
+//         .ion-accordion-toggle-icon {
+//           display: none;
+//         }
+//         * {
+//           pointer-events: none !important;
+//           touch-action: none !important;
+//           cursor: text;
+//         }
+//       }
+//     }
+//   }
+//   // fieldset inside fieldset
+//   &.dcf-fieldset .dcf-fieldset {
+//     margin-top: $dcf-spacement-medium + $dcf-spacement-xsmall !important;
+//   }
+// }
 
 // crud field component global customizations
 ngx-decaf-crud-field {

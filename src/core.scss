@@ -277,8 +277,11 @@ ion-card {
 html:not(.dcf-palette-dark) {
   /* Firefox */
   * {
-    &:not(:hover) {
+    &:hover {
       scrollbar-color: var(--dcf-color-gray-2) transparent !important;
+    }
+    &:not(:hover) {
+      scrollbar-color: transparent !important;
     }
     // auto | thin | none
     scrollbar-width: thin !important; /*  */
