@@ -32,6 +32,7 @@ ion-app {
   // }
 
   ion-select {
+    &.ng-pristine.ng-valid::part(placeholder),
     &.ng-invalid.has-focus::part(placeholder) {
       display: none !important;
     }
