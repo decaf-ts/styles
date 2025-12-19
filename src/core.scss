@@ -1,7 +1,6 @@
 @use "components/variables/decaf.scss" as *;
 @use "components/base.scss" as base;
 @import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,400..900;1,14..32,400..900&display=swap");
-@forward "@tabler/icons-webfont/dist/tabler-icons.min.css" as *;
 
 :root {
   --dcf-default-dynamic-font: "Inter", sans-serif;
