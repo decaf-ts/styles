@@ -1,6 +1,7 @@
 @use "components/variables/decaf.scss" as *;
 @use "components/base.scss" as base;
 @import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,400..900;1,14..32,400..900&display=swap");
+@forward "@tabler/icons-webfont/dist/tabler-icons.min.css" as *;
 
 :root {
   --dcf-default-dynamic-font: "Inter", sans-serif;
@@ -10,6 +11,7 @@
 
   // base text color
   --dcf-text-color: #{$text-color};
+  --dcf-color-text: var(--dcf-text-color);
 
   // sizes / widths
   --dcf-width-s: #{$dcf-width-s};
@@ -129,86 +131,6 @@
   --dcf-color-gray-8: #182230;
   --dcf-color-gray-9: #101828;
   --dcf-color-gray-10: #0c111d;
-}
-
-.dcf-palette-dark {
-  --dcf-content-background: transparent;
-  --dcf-input-fill-background: var(--dcf-color-step-100);
-  --dcf-text-color: #ffffff;
-
-  /*
-   * iOS Dark Theme
-   * -------------------------------------------
-   */
-  &.ios body {
-    --dcf-background-color: #25293c;
-    --dcf-background-color-rgb: 37, 41, 60;
-    --dcf-text-color: #ffffff;
-    --dcf-text-color-rgb: 255, 255, 255;
-    --dcf-color-step-50: #0d0d0d;
-    --dcf-color-step-100: #1a1a1a;
-    --dcf-color-step-150: #262626;
-    --dcf-color-step-200: #333333;
-    --dcf-color-step-250: #404040;
-    --dcf-color-step-300: #4d4d4d;
-    --dcf-color-step-350: #595959;
-    --dcf-color-step-400: #666666;
-    --dcf-color-step-450: #737373;
-    --dcf-color-step-500: #808080;
-    --dcf-color-step-550: #8c8c8c;
-    --dcf-color-step-600: #999999;
-    --dcf-color-step-650: #a6a6a6;
-    --dcf-color-step-700: #b3b3b3;
-    --dcf-color-step-750: #bfbfbf;
-    --dcf-color-step-800: #cccccc;
-    --dcf-color-step-850: #d9d9d9;
-    --dcf-color-step-900: #e6e6e6;
-    --dcf-color-step-950: #f2f2f2;
-    --dcf-item-background: #2f3349;
-    --dcf-card-background: #2f3349;
-    --dcf-input-fill-background: var(--dcf-card-background);
-  }
-  &.ios ion-modal {
-    --dcf-background-color: var(--dcf-color-step-100);
-    --dcf-toolbar-background: var(--dcf-color-step-150);
-    --dcf-toolbar-border-color: var(--dcf-color-step-250);
-  }
-  /*
-   * Material Design Dark Theme
-   * -------------------------------------------
-   */
-
-  &.md body {
-    --dcf-background-color: #25293c;
-    --dcf-background-color-rgb: 37, 41, 60;
-    --dcf-text-color: #ffffff;
-    --dcf-text-color-rgb: 255, 255, 255;
-    --dcf-border-color: #222222;
-    --dcf-color-step-50: #2f3349;
-    --dcf-color-step-100: #2a2a2a;
-    --dcf-color-step-150: #363636;
-    --dcf-color-step-200: #414141;
-    --dcf-color-step-250: #4d4d4d;
-    --dcf-color-step-300: #595959;
-    --dcf-color-step-350: #656565;
-    --dcf-color-step-400: #717171;
-    --dcf-color-step-450: #7d7d7d;
-    --dcf-color-step-500: #898989;
-    --dcf-color-step-550: #949494;
-    --dcf-color-step-600: #a0a0a0;
-    --dcf-color-step-650: #acacac;
-    --dcf-color-step-700: #b8b8b8;
-    --dcf-color-step-750: #c4c4c4;
-    --dcf-color-step-800: #d0d0d0;
-    --dcf-color-step-850: #dbdbdb;
-    --dcf-color-step-900: #e7e7e7;
-    --dcf-color-step-950: #f3f3f3;
-    --dcf-item-background: #2f3349;
-    --dcf-toolbar-background: #2f3349;
-    --dcf-tab-bar-background: #31354d;
-    --dcf-card-background: #2f3349;
-    --dcf-input-fill-background: var(--dcf-card-background);
-  }
 }
 
 // Ionic variable overrides
