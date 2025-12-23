@@ -18,7 +18,8 @@
   "license": "MIT",
   "files": [
     "src",
-    "dist"
+    "dist",
+    "workdocs/assets/slogans.json"
   ],
   "repository": {
     "type": "git",
