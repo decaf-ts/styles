@@ -28,5 +28,8 @@ $box-shadow-small: 0px 3px 12px rgba(47, 43, 61, 0.07);
 $box-shadow-medium: 0px 6px 24px rgba(47, 43, 61, 0.14);
 $box-shadow-large: 0px 12px 24px rgba(47, 43, 61, 0.28);
 $box-shadow-xlarge: 0px 24px 48px rgba(47, 43, 61, 0.56);
+$box-shadow-compact:
+  0px 1px 3px rgba(0, 0, 0, 0.1),
+  0px 1px 2px -1px rgba(0, 0, 0, 0.1);
 
 $text-color: #414651; // gray-7
