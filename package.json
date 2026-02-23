@@ -41,9 +41,9 @@
     "watch": "node bin/watch.js",
     "build:prod": "node ./bin/build.js --prod",
     "test": "jest --runInBand --coverage --detectOpenHandles",
-    "test:all": "jest --testPathPattern=\"/tests\" --passWithNoTests --detectOpenHandles",
+    "test:all": "jest --testPathPatterns=\"/tests\" --passWithNoTests --detectOpenHandles",
     "test:circular": "dpdm -T --no-warning --no-tree ./src/index.ts",
-    "coverage": "rimraf ./workdocs/reports/data/*.json && npm run test:all -- --coverage --config=./workdocs/reports/jest.coverage.config.ts",
+    "coverage": "rimraf ./workdocs/reports/data/*.json && npm run test:all -- --coverage --config=./workdocs/reports/jest.coverage.config.cjs",
     "lint": "eslint .",
     "lint-fix": "eslint --fix .",
     "prepare-pr": "npm run lint-fix && npm run build:prod && npm run coverage && npm run docs",
@@ -83,11 +83,16 @@
   "homepage": "https://github.com/decaf-ts/styles#readme",
   "devDependencies": {
     "@decaf-ts/utils": "latest",
+    "@types/jest": "^30.0.0",
     "autoprefixer": "^10.4.21",
     "chokidar": "^4.0.3",
     "cssnano": "^7.1.1",
     "postcss": "^8.5.6",
     "postcss-cli": "^11.0.1",
     "sass": "^1.92.1"
+  },
+  "overrides": {
+    "minimatch": "^10.2.2",
+    "test-exclude": "7.0.1"
   }
 }
