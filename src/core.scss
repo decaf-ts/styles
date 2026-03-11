@@ -143,6 +143,9 @@ ion-card {
   color: var(--dcf-text-color);
 }
 
+.dcf-has-action {
+  cursor: pointer;
+}
 // dark theme changes
 .dcf-palette-dark {
   ion-select,
