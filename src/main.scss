@@ -337,7 +337,6 @@ textarea {
 .dcf-tooltip {
   position: absolute;
   display: none;
-  top: -1.825rem;
   background: var(--dcf-color-dark);
   color: #fff;
   padding: 6px 10px;
@@ -352,6 +351,14 @@ textarea {
   transition:
     opacity 0.25s ease,
     transform 0.25s ease;
+
+  &.dcf-tooltip-top {
+    top: -1.825rem;
+  }
+
+  &.dcf-tooltip-over {
+    top: -1rem;
+  }
 }
 
 .dcf-tooltip-parent:hover .dcf-tooltip {
