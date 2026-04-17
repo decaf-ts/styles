@@ -1,8 +1,20 @@
 @use "variables/decaf.scss" as *;
 
+// @mixin hiddenOn($breakpoint, $rule: min-width) {
+//   $width: if($rule == "min-width", $breakpoint - 1px, $breakpoint);
+//   @media (#{$rule}: $width) {
+//     @content;
+//   }
+// }
+
 @mixin hiddenOn($breakpoint, $rule: min-width) {
-  $width: if($rule == "min-width", $breakpoint - 1px, $breakpoint);
-  @media (#{$rule}: $width) {
+  $width: $breakpoint;
+
+  @if $rule == min-width {
+    $width: $breakpoint - 1px;
+  }
+
+  @media (#{$rule}: #{$width}) {
     @content;
   }
 }

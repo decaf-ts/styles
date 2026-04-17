@@ -246,6 +246,47 @@ textarea {
 }
 
 // fix - ionic error text element
+.dcf-input-error {
+  position: absolute;
+  color: var(--dcf-color-danger) !important;
+  display: inline-block !important;
+  font-size: 0.8rem !important;
+  font-weight: 500 !important;
+  line-height: 1.1rem;
+  z-index: 9999;
+
+  &.dcf-options-error {
+    position: relative;
+    margin-bottom: 0.25rem !important;
+    max-width: 200px !important;
+  }
+  .ti,
+  ngx-decaf-icon,
+  ion-icon {
+    position: relative;
+    top: 2px !important;
+    min-width: 20px;
+    font-size: 1rem !important;
+    text-align: left;
+  }
+}
+
+.dcf-input-helper {
+  font-size: 0.875rem !important;
+  font-weight: 500;
+  margin-top: 0.25rem;
+  margin-bottom: -0.75rem;
+  &.dcf-has-action {
+    cursor: pointer;
+    // color: var(--dcf-color-gray-7) !important;
+    // color: var(--dcf-color-primary) !important;
+    text-decoration: underline;
+  }
+}
+
+.dcf-input-error + .dcf-input-helper {
+  padding-top: 1rem;
+}
 
 * {
   .select-bottom,
@@ -257,19 +298,19 @@ textarea {
   }
 
   &:not(.ng-untouched) {
-    + .dcf-error,
+    + .dcf-input-error,
     .input-bottom {
       display: none;
     }
   }
 
   &.ng-touched {
-    + .dcf-error,
+    + .dcf-input-error,
     .input-bottom {
       display: block;
     }
   }
-  .dcf-error,
+  .dcf-input-error,
   .error-text,
   ::part(error-text),
   &::part(error-text) {
@@ -281,7 +322,13 @@ textarea {
     font-weight: 500;
   }
 }
-
+ion-radio-group,
+.dcf-radio-group-label,
+.dcf-checkbox-group {
+  .dcf-input-error {
+    display: inline-block !important;
+  }
+}
 .dcf-hidden {
   display: none !important;
 }
