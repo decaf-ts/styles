@@ -1,6 +1,6 @@
 {
   "name": "@decaf-ts/styles",
-  "version": "0.2.3",
+  "version": "0.2.4",
   "description": "template for ts projects",
   "main": "./dist/main.min.css",
   "style": "./dist/main.min.css",
