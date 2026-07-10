@@ -60,36 +60,40 @@ ion-app {
   ion-textarea,
   ion-radio-group,
   ion-input {
-    --border-radius: var(--dcf-border-radius) !important;
+    --border-color: var(--dcf-color-gray-3);
+    --highlight-color-focused: var(--dcf-color-primary);
+    --highlight-color-invalid: var(--dcf-color-danger);
+    --highlight-color-valid: var(--dcf-color-primary);
+    --border-radius: 6px !important;
+    // --border-radius: var(--dcf-border-radius) !important;
     &::part(label) {
       font-weight: 500;
     }
 
-    --border-color: var(--dcf-color-gray-3) !important;
     ion-label,
     label,
     &::part(label) {
-      color: var(--dcf-color-gray-7) !important;
+      color: var(--dcf-color-gray-7);
     }
-    // @media (prefers-color-scheme: light) {
-    //   --border-color: var(--dcf-color-gray-3) !important;
-    //   ion-label,
-    //   label,
-    //   &::part(label) {
-    //     color: var(--dcf-color-gray-7) !important;
+
+    // &.ion-valid.has-focus,
+    // &.ion-valid.ion-touched,
+    // &.ion-valid.ng-dirty,
+    // &.ion-valid.ng-touched {
+    //   &::part(label),
+    //   .label-text-wrapper {
+    //     color: var(--dcf-color-primary) !important;
     //   }
     // }
-
-    // @media (prefers-color-scheme: dark) {
-    //   --placeholder-color: var(--dcf-color-gray-1) !important;
-    //   ion-label,
-    //   label,
-    //   &::part(label) {
-    //     color: var(--dcf-color-gray-3) !important;
-    //   }
-    //   // figma
-    //   &:not(:hover) {
-    //     --border-color: var(--dcf-color-step-500) !important;
+    // &.has-value {
+    //   &.ng-dirty {
+    //     --border-color: var(--dcf-color-primary) !important;
+    //     ion-label,
+    //     &::part(label),
+    //     .label-text-wrapper,
+    //     label {
+    //       color: var(--dcf-color-primary) !important;
+    //     }
     //   }
     // }
   }
