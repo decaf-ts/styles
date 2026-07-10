@@ -55,7 +55,12 @@ ion-app {
       font-weight: 500;
     }
   }
-
+  ion-textarea {
+    --border-color: var(--dcf-color-gray-3) !important;
+    --highlight-color-focused: var(--dcf-color-primary) !important;
+    --highlight-color-invalid: var(--dcf-color-danger) !important;
+    --highlight-color-valid: var(--dcf-color-primary) !important;
+  }
   ion-select,
   ion-textarea,
   ion-radio-group,
