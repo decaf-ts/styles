@@ -15,5 +15,7 @@ jobs:
   build:
     uses: decaf-ts/reusable-actions/.github/workflows/publish-on-release.yaml@master
     permissions:
+      contents: read
+      packages: read
       id-token: write
     secrets: inherit
