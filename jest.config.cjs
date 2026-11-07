@@ -2,7 +2,9 @@ const config = {
   verbose: true,
   // eslint-disable-next-line no-undef
   rootDir: __dirname,
-  transform: { "^.+\\.ts$": "ts-jest" },
+  modulePathIgnorePatterns: ["<rootDir>/lib/", "<rootDir>/dist/"],
+  extensionsToTreatAsEsm: [".ts"],
+  transform: { "^.+\\.ts$": ["ts-jest", { useESM: true }] },
   testEnvironment: "node",
   testRegex: "/tests/.*\\.(test|spec)\\.(ts|tsx)$",
   moduleFileExtensions: ["ts", "tsx", "js", "jsx", "json", "node"],

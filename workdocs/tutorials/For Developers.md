@@ -63,7 +63,7 @@ The following npm scripts are available for development:
 - `lint-fix` - tries to auto-fix the code folder;
 - `prepare-release` - defines the commands to run prior to a new tag (defaults to linting, building production code,
   running tests and documentation generation);
-- `release` - triggers a new tag being pushed to master (via `./bin/tag_release.sh`);
+- `release` - triggers a new tag being pushed to master (via `npm run release (provided by @decaf-ts/utils)`);
 - `clean-publish` - cleans the package.json for publishing;
 - `drawings` - compiles all DrawIO `*.drawio` files in the `workdocs/drawings` folder to png and moves them to
   the `workdocs/resources` folder;

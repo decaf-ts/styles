@@ -17,6 +17,7 @@
     "isolatedModules": true,
     "sourceMap": true,                           /* Generates corresponding '.map' file. */
     // "outFile": "./",                             /* Concatenate and emit output to single file. */
+    "rootDir": ".",
     "outDir": "lib",                              /* Redirect output structure to the directory. */
     "rootDirs": ["src", "tests"],                               /* Specify the root directory of input files. Use to control the output directory structure with --outDir. */
     // "composite": true,                           /* Enable project compilation */
